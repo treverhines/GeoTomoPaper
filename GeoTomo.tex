@@ -50,37 +50,44 @@ synthetic test.
 
 \section{Linearizing postseismic deformation} 
 On the timescales of postseismic deformation, the lithosphere can be
-approximated as a Maxwell viscoelastic material.  That is to say, the
-relationship between stress and strain at any point in the lithosphere
-can be described as
+approximated as a Maxwell viscoelastic material where, in problems
+where deformation is restricted to be in one direction, stress and
+strain are related by
 \begin{equation}
   \frac{\partial\bold{\varepsilon}}{\partial t}=\frac{\bold{\sigma}}{\eta} + 
-                              \frac{1}{\mu}\frac{\partial\bold{\sigma}}{\partial t},
+                              \frac{1}{\mu}\frac{\partial\bold{\sigma}}{\partial t}.
 \end{equation}
-where $\eta$ and $\mu$ are viscosity and shear modulus respectively.
-If the lithosphere is subjected to rapid strain from an earthquake
-then stresses will immediately propagate through the lithosphere
-elastically.  The lithosphere will then start to relax these stresses
-through anelastic deformation.  Immediately after an earthquake the rate
-of strain at any point in the lithosphere is going to be proportional
-to the stresses induced from the earthquake and inversely proportional
-to the viscosity at that point.  As we will demonstrate, viscous
-relaxation at each point in the lithosphere will also express itself
-at the surface by an amount inversely proportional to its viscosity.
-Specifically, surface deformation resulting from viscous relaxation
-immediately following an earthquake can be expressed as a linear
-combination of Green's functions representing each region of the
-lithosphere where each Green's function is scaled by the inverse
-viscosity of the corresponding region.  We will justify this assertion and
-use it to produce a simple approximation which expresses postseismic
-deformation in terms of fault slip and lithospheric viscosity.
+$\eta$ and $\mu$ are viscosity and shear modulus respectively.  This
+constitutive relationship implies that a sudden strain in the
+lithosphere from an earthquake will instantaneously propagate stresses
+through the lithosphere elastically (assuming the lithosphere is
+undergoing quasi-static deformation).  Creep throughout the
+lithosphere will also initiate immediately after the earthquake, where
+the viscous strain rate in each parcel of the lithosphere will be
+proportional to the reciprocal of viscostity in that parcel and
+independent of the viscosity elsewhere.  So long as the stresses from
+the earthquake are large compared to the stresses transferred through
+viscous relaxation, creep will remain approximately proportional to
+the reciprocal of viscosity.  In this early postseismic period, creep
+in each parcel will express itself at the surface with an amplitude
+also proportional to the repicrocal of that parcels viscosity.  The
+surface expression of viscous relaxation throughout the lithosphere
+will then be a linear sum of the surface expression of each parcel.
+This linearity of early postseismic surface deformation with respect
+to lithospheric viscosity is demonstrated below using simple
+anti-plane strain earthquake models where the lithosphere is
+approximated as a layerd halfspace.  We then use the linearity of
+postseismic deformation with respect to lithospheric viscosity to
+construct a simple approximation for early postseismic deformation,
+which greatly facilitates the inverse problem aimed at estimating the
+amount of slip on a fault and lithospheric viscosity.
 
 The easiest way to demonstrate how postseismic deformation can be
 linearized with respect to lithospheric viscosity is with a simple two
 dimensional earthquake model which consists of a long, vertical,
 strike-slip fault oriented in the anti-plane direction and embedded in
-a lithosphere with a layered viscosity structure.  We will proceed by
-making use of the correspondence principle of viscoelasticity
+a viscoelastic horizontal layer overlying a viscoelastic halfspace.
+We make use of the correspondence principle of viscoelasticity
 \citep{F1975}, which states that the Laplace transform of deformation
 in a viscoelastic body has the same form as the Laplace transform of
 deformation in a elastic body with the same geometry and subjected to
@@ -92,9 +99,7 @@ modulus in the Laplace transform of the elastic solution with the
 effective viscoelastic shear modulus and then compute the inverse
 Laplace transform \citep[e.g.][]{HH2005,NM1974,SP1978}.
 
-We first consider a lithosphere consisting of a Maxwell viscoelastic
-layer containing a fault, which overlies a Maxwell viscoelastic
-half-space.  The appropriate elastic solution which we will start from
+The appropriate elastic solution to start from
 is given by \citet{R1971}.  Surface displacements, $u_{e}(x,t)$,
 resulting from slip on a fault in a two layered elastic half-space
 are
@@ -117,7 +122,7 @@ width of the fault, $H$ is the thickness of the upper layer, and
 $\mu_1$ and $\mu_2$ are the shear modulii in the upper layer and lower
 half-space respectively.
 
-We can then find the Laplace transform of surface displacements in the
+We then find the Laplace transform of surface displacements in the
 viscoelastic layered half-space by taking the Laplace transform of eq
 (\ref{TwoLayerElastic}), 
 \begin{equation}\label{TwoLayerElasticLaplace}
@@ -140,11 +145,12 @@ where
 \end{equation}
 To find the surface displacements in the time domain one must find the
 inverse Lapace transform of eq (\ref{TwoLayerViscousLaplace}), which
-would typically be done using the method of residues
+is typically be done using the method of residues
 \citep[e.g.][]{NM1974}. However, we are interested in characterizing
-the behavior of early postseismic deformation and it will better serve
+the behavior of early postseismic deformation and it better serves
 us to instead perform the inverse Laplace transform with an extension
-of the initial value theorem. This method is described in the appendix.
+of the initial value theorem. This method is described in the
+appendix.
 
 For simplicity, we assume that the shear modulus for the viscoelastic
 lithosphere is homogenous throughout the lithosphere (i.e. $\mu_1 =
@@ -173,10 +179,10 @@ from slip on the fault.  The remaining terms are describing the
 surface deformation resulting from viscous relaxation of those
 stresses. Of these remaining terms, the first is the initial rate of
 surface deformation resulting from viscous relaxation of stresses
-induced by a unit of slip, which we will refer to as the instantaneous
-viscous response, and it is convolved with the faults slip history.
-As suggested, this is indeed a linear expression with respect to the
-inverse viscosity of the two layers.
+induced by a unit of slip and it is convolved with the faults slip
+history.  As suggested, this instantaneous viscous response is a
+linear expression with respect to the inverse viscosity of the two
+layers.
 
 If the time since the rupture is sufficiently small compared to the
 relaxation times of each layer, $\eta_i/\mu$, (i.e. the third and
@@ -273,26 +279,28 @@ Although the above equation is capable of describing an arbitrary
 viscosity structure, it falls short of being useful as the forward
 solution in an inverse problem aimed at estimating lithospheric
 viscosity.  This is because the above equation makes the unphysical
-assumption that the fault is infinitely long.  This will introduce
-first order errors, which will likely wash out the second order effect
+assumption that the fault is infinitely long.  This would introduce
+first order errors, which would likely wash out the second order effect
 of viscosity. Instead, we find eq. (\ref{ContinuousViscousApprox})
 useful for making estimates of the depth sensitivity of
 postseismic deformation.  
 
 \subsection{Arbitrary Composite Maxwell Model}
-We now make the assertion that the initial rate of surface deformation
+We make the assertion that the initial rate of surface deformation
 resulting from an instantaneous dislocation in any two or three
 dimensional Maxwell viscoelastic medium, which has been arbitrarily
 discretized into N regions, will have the form
 \begin{equation}\label{PostseismicInitialVelocity}
-  \frac{\delta}{\delta t}u(x,t)\big|_{t=0} = \sum_j^N\frac{1}{\eta_j}G_j(x) .
+  \frac{\delta}{\delta t}u(x,t)\big|_{t=0} = \sum_j^N\frac{1}{\eta_j}G_j(x).
 \end{equation}
-$G_j(x)$ are what we refer to as initial rate viscoelastic Green's
-functions, which describe the initial rate of surface deformation at
-point $x$ resulting from viscoelastic relaxation in region $j$.  We verify
-this assertion numerically section 5.5 and save a more rigorous
-justification for a later paper.  We can then approximate surface
-deformation as
+$G_j(x)$ is the initial rate of surface deformation resulting from
+creep when the reciprocal of the viscosity in region $j$ is one and
+zero everywhere else (i.e. elastic).  In this sense, $G_j(x)$ can be
+thought of as a Greens function for the initial rate of deformation.
+We verify this assertion numerically section 5.5 and save a more
+rigorous justification for a later paper.
+
+We can then approximate surface deformation as
 \begin{equation}
   u(x,t) \approx b(t)F(x) + \sum_j^N\int_0^t \frac{b(\theta)}{\eta_j}G_j(x) d\theta
 \end{equation}
@@ -325,7 +333,7 @@ aimed at finding the distribution of slip on a fault and an
 arbitrarily complicated lithosphere viscosity structure from
 postseismic deformation.
   
-We will assume that the slip history in any one direction on each
+We assume that the slip history in any one direction on each
 fault patch, $b_i(t)$, can be expressed as P linear terms such that
 \begin{equation}
   b_i(t) = \sum_k^P \alpha_{ik}A_k(t) .
@@ -334,24 +342,25 @@ and
 \begin{equation}
   \int_0^t b_i(\theta)d\theta = \sum_k^P\alpha_{ik}B_k(t) .
 \end{equation}
-In this paper, $A_k(t)$ will consist of either step functions, which
-will describe coseismic slip on a fault patch, and ramp functions,
-which will describe afterslip on a fault patch.  The approximation
-given by eq (\ref{Postseismic_Approximation}) now becomes
+In this paper, $A_k(t)$ consists of either step functions, which
+describe coseismic slip on a fault patch, and ramp functions, which
+describe afterslip on a fault patch over a time interval.  The
+approximation given by eq (\ref{Postseismic_Approximation}) now
+becomes
 \begin{equation}\label{Postseismic_Approximation2}
 u(x,t) \approx \sum_i^M\sum_k^P\alpha_{ik}F_i(x)A_k(t) + 
                \sum_i^M\sum_j^N\sum_k^P\frac{\alpha_{ik}}{\eta_j}G_{ij}(x)B_k(t).
 \end{equation}
 If we assume that the fault geometry and the elastic properties of the
 lithosphere are well known then we can numerically compute
-$F_i(x)$. Likewise, we will assume some sufficiently fine discretizing
+$F_i(x)$. Likewise, we assume some sufficiently fine discretizing
 of the viscous regions in the lithosphere. This allows us to compute
-$G_{ij}(x)$ numerically and we can consider it known as well.  We are
+$G_{ij}(x)$ numerically and we consider it known as well.  We are
 left with the unknown slip parameters, $\alpha_{ik}$, and unknown
 viscosities in each region of the lithosphere, $\eta_j$.
 
-We can estimate these unknown parameters from observations of surface
-displacements as an inverse problem. Let $\bold{u_{obs}}$ be a vector
+We estimate these unknown parameters from observations of surface
+deformation as an inverse problem. Let $\bold{u_{obs}}$ be a vector
 of observed coseismic and postseismic surface displacements at various
 locations and points in time.  Let $\bold{m}$ be a vector of all the
 unknown parameters in $\alpha_{ik}$ and $\eta_j$ and let $\bold{u(m)}$
@@ -374,19 +383,19 @@ where
     \end{vmatrix} .
 \end{equation}  
 In the above equation, $\bold{W}$ is a weight matrix containing the
-inverse uncertainty for each observation along the diagonal. Because
-this inverse problem will inevitably have nonunique solutions for
+reciprocal of uncertainty for each observation along the diagonal. Because
+this inverse problem inevitably has nonunique solutions for
 $\bold{m}$, we put additional constraints on the model parameters with
-the matrix $\bold{L}$.  In our following synthetic tests we will let
+the matrix $\bold{L}$.  In our following synthetic tests we let
 $\bold{L}$ be a second order Tikhonov regularization matrix
 \citep{TA1978}, which adds a smoothness constraint to the model
-parameters.  Specifically, we will smooth the spatial distributions of
+parameters.  Specifically, we smooth the spatial distributions of
 fault slip and lithospheric viscosity.  $\lambda$ is a penalty
-parameter, which controls how much we will enforce the smoothness
-constraint.  In our synthetic test we will choose the value for
+parameter, which controls how much we enforce the smoothness
+constraint.  In our synthetic test we choose the value for
 $\lambda$ through 10-fold cross validation.
 
-The slip parameters that we will be estimating represent coseismic
+The slip parameters that we are estimating represent coseismic
 slip, or afterslip on a fault patch, both of which can typically be
 assumed to occur in one predominant direction.  By imposing the
 nonnegativity constraint on $\bold{m}$, we bound the inferred slip
@@ -394,11 +403,10 @@ rake on any patch to be between the rake directions of our chosen
 basis slip directions.  Additionally, the nonnegativity constraint on
 $\bold{m}$ prevents unphysical viscosity inferences.
 
-We will find the $\bold{m}$ that satisfies the above conditions with
-the Gauss-Newton method \citep{A2013}.  The best fit model parameters
-can be found by making an initial guess for the solution and then
-iteratively solving
-
+We find the $\bold{m}$ that satisfies the above conditions with the
+Gauss-Newton method \citep{A2013}.  The best fit model parameters are
+found by making an initial guess for the solution and then iteratively
+solving
 \begin{equation}\label{Gauss-Newton}
 \bold{J}(\bold{m}^{k})\bold{m}^{k+1} = -\bold{f}(\bold{m}^k) + \bold{J}(\bold{m}^{k})\bold{m}^{k}
 \end{equation}
@@ -408,7 +416,7 @@ impose the nonnegativity constraint on $\bold{m}$ by solving eq
 (\ref{Gauss-Newton}) with a nonnegative least squares algoritm
 \cite{LH1974}.
 
-We found that it is occasionally necessary to constrain the step size
+We find that it is occasionally necessary to constrain the step size
 for each iteration of eq (\ref{Gauss-Newton}) in order to ensure
 convergence.  We do so in a manner akin to the Levenberg-Marquardt
 algorithm \citep{A2013}.  So we instead solve
@@ -434,16 +442,16 @@ and
 where $\kappa$ controls the step size for each iteration and varies
 depending on whether the algorithm is converging.  
 
-In a nonlinear least squares algorithm, computing the Jacobian can
-typically be the largest computational burden; however in this case,
+In a nonlinear least squares algorithm, computing the Jacobian
+typically is the largest computational burden; however in this case,
 evaluating the Jacobian of eq (\ref{Postseismic_Approximation2})
 requires only a few computationally lightweight matrix operation.
 Consequently, our nonlinear least squares algorithm converges to a
 solution for the unknown parameters $\alpha_{ik}$ and $\eta_j$ in a
 matter of seconds on a desktop computer.  The main computational
-burden is in computing $F_i(x)$ and $G_{ij}(x)$
-which is done with finite element software and only needs to be done
-once for a given fault and lithosphere geometry.
+burden is in computing $F_i(x)$ and $G_{ij}(x)$ which is done with
+finite element software and only needs to be done once for a given
+fault and lithosphere geometry.
 
 Throughout this paper, our initial guess for the model parameters is
 that there is no slip on any fault patch, and the lithosphere is
@@ -454,15 +462,15 @@ solution.
 \section{Synthetic test}
 \subsection{Synthetic postseismic deformation}
 
-We will demonstrate that our inverse method is capable of recovering
+We demonstrate that our inverse method is capable of recovering
 fault slip and lithospheric viscosity from postseismic deformation
-with a synthetic test.  We will use the finite element software,
+with a synthetic test.  We use the finite element software,
 Pylith \citep{A2007}, to compute the surface deformation resulting from
 a specified amount of slip on a fault in a lithosphere with a
-specified viscosity.  We will then invert this synthetic surface
+specified viscosity.  We then invert this synthetic surface
 deformation with the method described in the previous section to see
 if we are able to recover the original model parameters.  This
-synthetic test will also serve to demonstrate that
+synthetic test also serves to demonstrate that
 eq. (\ref{PostseismicInitialVelocity}) as well as
 eq. (\ref{Postseismic_Approximation}) are indeed valid for three
 dimensional earthquake models.
@@ -487,8 +495,8 @@ intervals up until 10 years after the earthquake which makes our
 chosen upper bound on viscosity effectively elastic on these
 timescales.
 
-We output displacements at 48 randomly chosen locations within a 200
-km radius of the fault.  This is intended to roughly correspond with the
+We output displacements at 60 randomly chosen locations within a 400
+km square centered about the fault.  This is intended to roughly correspond with the
 density of GPS station at a well instrumented plate boundary.
 
 Additionally, we add noise to our displacements which is consistent
@@ -524,7 +532,7 @@ strike-slip motion.
 
 Each instantaneous viscous Green’s function is associated with a
 source of slip, and subsequent relaxation in a particular viscoelastic
-region of the lithosphere.  This means that we will compute
+region of the lithosphere.  This means that we compute
 $60\times2\times8=420$ viscous Green's functions (the 2 is for each
 slip direction).  These are computed by perturbing an elastic
 lithosphere with a viscosity of $10^{18}\mathrm{Pa}\cdot\mathrm{s}$
@@ -539,15 +547,15 @@ increase from 0 to 1 meter of slip over the time intervals $t=0.0$ to
 $t=0.5$, $t=0.5$ to $t=1.0$, and $t=1.0$ to $t=10.0$.  The assumption
 is that slip on each fault patch can be described in terms of these
 slip functions.  Although our synthetic model does not have any fault
-slip during the last time interval, we include it to test if the
+slip during the last time interval, we include it to test if
 postseismic deformation over that interval, which is resulting purely
-from viscous relaxation, can be describe with continued fault creep.
+from viscous creep, can be describe with continued fault slip.
 
 \subsection{Regularization}
 Regularization is necessary for this inverse problem and the degree to
-which we will regularize the solution needs to be addressed.  We first
+which we regularize the solution needs to be addressed.  We first
 note that the single regularization parameter, $\lambda$, in
-eq. \ref{Inverse_Problem} will cause the fault slip parameters,
+eq. \ref{Inverse_Problem} causes the fault slip parameters,
 $\alpha_{ik}$, to be regularized just as much as the viscosity
 parameters, $\eta_j$, which may not be desirable.  We instead choose a
 penalty parameter for the rows in $\bold{L}$ regularizing the slip
