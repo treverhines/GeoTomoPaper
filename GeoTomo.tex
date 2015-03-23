@@ -227,10 +227,11 @@ It is worth noting that the instantaneous viscous response of the
 uppermost layer and lower half-space differ only in sign and in
 amplitude.  In the context of an inverse problem, this means that it
 is impossible to use (\ref{TwoLayerViscousApprox}) to estimate the
-absolute viscosity of the two layers, rather it is only be possible
-to estimate their relative viscosities.  This is not a difficult
-obstacle to overcome because in application we can typically assume
-that the upper layer has an effectively infinite viscosity.
+absolute viscosity of the two layers, rather it is only be possible to
+estimate their relative viscosities.  This is not a difficult obstacle
+to overcome because in application we can typically assume that the
+upper layer has a sufficiently long Maxwell relaxation time such that
+it is effectively elastic over the postseismic period.
 
 We follow the same procedure from above to find the surface
 deformation resulting from slip on a strike-slip fault in a three
@@ -297,9 +298,11 @@ have the form
 $G_j(x)$ is the initial rate of surface deformation resulting from
 creep when the reciprocal of the viscosity in region $j$ is one and
 zero everywhere else (i.e. elastic).  In this sense, $G_j(x)$ can be
-thought of as a Greens function for the initial rate of deformation.
-We verify this assertion numerically section 5.5 and save a more
-rigorous justification for a later paper.
+thought of as a Green's function for the initial rate of surface
+deformation resulting for viscous creep and we will refer to $G_j(x)$
+as the instantaneous viscous Green's function.  We verify eq
+\ref{PostseismicInitialVelocity} numerically in section 5.5 and save a
+more rigorous justification for a later paper.
 
 We can then approximate surface deformation as
 \begin{equation}
@@ -308,24 +311,24 @@ We can then approximate surface deformation as
 where $F(x)$ is the elastic Green's function, which describes the
 elastic deformation resulting from a dislocation with a unit of slip.
 
-We can further generalize this approximation of surface deformation to
+We further generalize this approximation of surface deformation to
 allow for an arbitrary spatial distribution of slip by using linear
 superposition.  If the elastic defomation in a viscoelastic
 lithosphere can be described in terms of M elastic dislocation
 sources, then early surface deformation resulting from both elastic
-dislocations and viscous relaxation can be approximated as
+dislocations and viscous creep can be approximated as
 \begin{equation}\label{Postseismic_Approximation}
 u(x,t) \approx \sum_i^Mb_i(t)F_i(x) + 
                \sum_i^M\sum_j^N\int_0^t\frac{b_i(\theta)}{\eta_j}G_{ij}(x) d\theta.
 \end{equation}
-Note that each instantaneous viscous Green's function is dependent
-upon both the region it represents as well as the dislocation source
-which induces the viscous relaxation in that region, hence the two
-indices.  If the geometry of the fault and lithosphere are
-sufficiently simple then $F_i(x)$ and $G_{ij}(x)$ can be determined
-analytically, as demonstrated in the previous section.  For more
-complicated two or three dimensional geometries, numerical methods are
-required to compute $F_i(x)$ and $G_{ij}(x)$.
+Note that the instantaneous viscous Green's function is dependent upon
+both the region it represents as well as the dislocation source which
+induces the viscous relaxation in that region, hence the two indices.
+If the geometry of the fault and lithosphere are sufficiently simple
+then $F_i(x)$ and $G_{ij}(x)$ can be determined analytically, as
+demonstrated in the previous section.  For more complicated two or
+three dimensional geometries, numerical methods are required to
+compute $F_i(x)$ and $G_{ij}(x)$.
 
 \section{Inversion method}
 The approximation of postseismic deformation given by eq
@@ -354,11 +357,11 @@ u(x,t) \approx \sum_i^M\sum_k^P\alpha_{ik}F_i(x)A_k(t) +
 \end{equation}
 If we assume that the fault geometry and the elastic properties of the
 lithosphere are well known then we can numerically compute
-$F_i(x)$. Likewise, we assume some sufficiently fine discretizing
-of the viscous regions in the lithosphere. This allows us to compute
-$G_{ij}(x)$ numerically and we consider it known as well.  We are
-left with the unknown slip parameters, $\alpha_{ik}$, and unknown
-viscosities in each region of the lithosphere, $\eta_j$.
+$F_i(x)$. Likewise, we assume some sufficiently fine discretization of
+the viscous regions in the lithosphere. This allows us to compute
+$G_{ij}(x)$ numerically.  We are left with the unknown slip
+parameters, $\alpha_{ik}$, and unknown viscosities in each region of
+the lithosphere, $\eta_j$.
 
 We estimate these unknown parameters from observations of surface
 deformation as an inverse problem. Let $\bold{u_{obs}}$ be a vector
@@ -383,18 +386,32 @@ where
       \lambda\bold{Lm}\\
     \end{vmatrix} .
 \end{equation}  
-In the above equation, $\bold{W}$ is a weight matrix containing the
-reciprocal of uncertainty for each observation along the diagonal. Because
-this inverse problem inevitably has nonunique solutions for
-$\bold{m}$, we put additional constraints on the model parameters with
-the matrix $\bold{L}$.  In our following synthetic tests we let
-$\bold{L}$ be a second order Tikhonov regularization matrix
-\citep{TA1978}, which adds a smoothness constraint to the model
-parameters.  Specifically, we smooth the spatial distributions of
-fault slip and lithospheric viscosity.  $\lambda$ is a penalty
-parameter, which controls how much we enforce the smoothness
-constraint.  In our synthetic test we choose the value for
-$\lambda$ through 10-fold cross validation.
+In the above equation, $\bold{W}$ is the inverse of the data
+covariance matrix. Because this inverse problem inevitably has
+nonunique solutions for $\bold{m}$, we put additional constraints on
+the model parameters with the matrix $\bold{L}$.  In our following
+synthetic tests we further constrain the solution by minimizing the
+Laplacian of the spatial distribution of fault slip and lithospheric
+viscosity.  We do so by letting $\bold{L}$ be the umbrella operator
+\citep{D1999} such that
+\begin{equation}
+  L_{ij}m_j = \frac{1}{|\mathcal{N}(i)|}\sum_{k\in \mathcal{N}(i)} m_k - m_i
+\end{equation}
+where $\mathcal{N}(i)$ denotes the set of all model parameter indices
+which are spatially adjacent to $i$.
+
+$\lambda$ is a penalty parameter, which controls how much we enforce
+the smoothness constraint.  for $\lambda$ through 10-fold cross
+validation. We first note that the single regularization parameter,
+$\lambda$, in eq. \ref{Inverse_Problem} causes the fault slip
+parameters, $\alpha_{ik}$, to be regularized just as much as the
+viscosity parameters, $\eta_j$, which may not be desirable.  We
+instead choose a penalty parameter for the rows in $\bold{L}$
+regularizing the slip parameters and a seperate penalty parameter for
+the rows in $\bold{L}$ regularizing viscosity.  We use 10-fold cross
+validation to find the optimal pair of slip and viscosity penalty
+parameters. The optimal pair of penalty parameters are those which
+minimize the predictive error which is shown in Figure 6.
 
 The slip parameters that we are estimating represent coseismic
 slip, or afterslip on a fault patch, both of which can typically be
@@ -446,7 +463,7 @@ depending on whether the algorithm is converging.
 In a nonlinear least squares algorithm, computing the Jacobian
 typically is the largest computational burden; however in this case,
 evaluating the Jacobian of eq (\ref{Postseismic_Approximation2})
-requires only a few computationally lightweight matrix operation.
+requires only a few computationally inexpensive matrix operation.
 Consequently, our nonlinear least squares algorithm converges to a
 solution for the unknown parameters $\alpha_{ik}$ and $\eta_j$ in a
 matter of seconds on a desktop computer.  The main computational
@@ -551,20 +568,6 @@ slip functions.  Although our synthetic model does not have any fault
 slip during the last time interval, we include it to test if
 postseismic deformation over that interval, which is resulting purely
 from viscous creep, can be describe with continued fault slip.
-
-\subsection{Regularization}
-Regularization is necessary for this inverse problem and the degree to
-which we regularize the solution needs to be addressed.  We first
-note that the single regularization parameter, $\lambda$, in
-eq. \ref{Inverse_Problem} causes the fault slip parameters,
-$\alpha_{ik}$, to be regularized just as much as the viscosity
-parameters, $\eta_j$, which may not be desirable.  We instead choose a
-penalty parameter for the rows in $\bold{L}$ regularizing the slip
-parameters and a seperate penalty parameter for the rows in $\bold{L}$
-regularizing viscosity.  We use 10-fold cross validation to find the
-optimal pair of slip and viscosity penalty parameters. The optimal
-pair of penalty parameters are those which minimize the predictive
-error which is shown in Figure 6.  
 
 \subsection{Recovered model}
 
@@ -776,6 +779,12 @@ $\hat f(s)$, evaluating the above series expansion is effectively the
 same as performing an inverse Laplace transform on $\hat f(s)$.
 
 \begin{thebibliography}{}
+
+\bibitem[\textit{Desbrun et al.}(1999)]{D1999}Desbrun, M., Meyer, M.,
+  Schröder, P., Barr, A. H. (1999). Implicit fairing of irregular
+  meshes using diffusion and curvature flow. Proceedings of the 26th
+  Annual Conference on Computer Graphics and Interactive Techniques -
+  SIGGRAPH ’99, 33, 317–324. http://doi.org/10.1145/311535.311576
 
 \bibitem[\textit{Ryder et al.}(2007)]{R2007}Ryder, I., Parsons, B.,
   Wright, T. J., Funning, G. J. (2007). Post-seismic motion
