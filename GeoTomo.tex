@@ -11,7 +11,7 @@
 \begin{document}
 \title{Rapid and simultaneous estimation of fault slip and
   heterogeneous lithospheric viscosity from postseismic deformation}
-\author{Trever T. Hines} \maketitle
+\author{Trever T. Hines and Eric A. Hetland} \maketitle
 \section{Abstract}
 
 \section{Introduction}
@@ -19,40 +19,40 @@ Geodetic observations of surface deformation in the months to years
 following an earthquake are often attributed to afterslip
 \citep[e.g.][]{M1991}, viscoelastic relaxation in the lithosphere
 \citep[e.g.][]{NM1974}, and/or poroelastic-relaxation
-\citep[e.g.][]{P1998,J2003}.  If postseismic deformation can be entirely
-described by afterslip, then one could easily constrain the spatial
-distribution of fault slip with a linear least squares inversion
-\citep[e.g.][]{F2007,B2002,H1987}, which could then provide insight into the
-frictional properties of faults \citep[e.g.][]{B2009}.  However,
-postseismic deformation following large (Mw$\geq$7) earthquakes is
-often attributed to viscoelastic relaxation in the lithosphere
-\citep[e.g.][]{P2003} or a combination of both afterslip and viscoelastic
-relaxation \citep[e.g.][]{H2008,R2015}.  In such cases, postseismic
-deformation can be used to constrain the lithosphere's viscous
-properties; however, this is a more difficult task than constraining a
-slip distribution.  Not only are there potentially competing
-deformation mechanism which must be discerned, finding the viscosity
-structure of the lithopshere from postseimsic deformation is a
-computationally expensive nonlinear inverse problem.  Typically, this
-is approached with a forward modeling grid search method.  These
-forward modeling techniques require the number of unknown parameters
-being estimated to be small, meaning that significant and potentially
-inappropriate modeling assumptions must be made \citep{H2013,RG2008}.
+\citep[e.g.][]{P1998,J2003}.  If postseismic deformation can be
+entirely described by afterslip, then one could easily constrain the
+spatial distribution of fault slip with a linear least squares
+inversion \citep[e.g.][]{F2007,B2002,H1987}, which could then provide
+insight into the frictional properties of faults
+\citep[e.g.][]{B2009}.  However, postseismic deformation following
+large (Mw$\geq$7) earthquakes is often attributed to viscoelastic
+relaxation in the lithosphere \citep[e.g.][]{P2003,P2005,HH2003} or a
+combination of both afterslip and viscoelastic relaxation
+\citep[e.g.][]{H2008,R2015}.  In such cases, postseismic deformation
+can be used to constrain the lithosphere's viscous properties;
+however, this is a more difficult task than constraining a slip
+distribution.  Not only are there potentially competing deformation
+mechanism which must be discerned, finding the viscosity of
+the lithopshere from postseimsic deformation is a computationally
+expensive nonlinear inverse problem.  Typically, this is approached
+with a forward modeling grid search method.  These forward modeling
+techniques require the number of unknown parameters being estimated to
+be small, meaning that significant and potentially inappropriate
+modeling assumptions must be made \citep{H2013,RG2008}.
 
 In this paper we propose a relatively fast method to kinematically
 invert coseismic and postseismic deformation to simultaneously
-estimate a time dependent distribution of slip on a fault and a
-viscosity structure of the lithosphere.  This method is based on an
-approximation which linearizes the rate of early postseismic
-deformation with respect to the lithosphere's viscosity structure.  We
-demonstrate the efficacy and limitations of this method through a
-synthetic test.
+estimate a time dependent distribution of fault slip and an
+arbitrarily discretized viscosity structure of the lithosphere.  Our
+method is based on an approximation which linearizes the rate of early
+postseismic deformation with respect to the viscosity of the
+lithosphere.  We demonstrate the efficacy and limitations of our
+method through a synthetic test.
 
-\section{Linearizing postseismic deformation} 
+\section{Linearizing early postseismic deformation} 
 On the timescales of postseismic deformation, the lithosphere can be
-approximated as a Maxwell viscoelastic material where, in problems
-where deformation is restricted to be in one direction, stress and
-strain are related by
+approximated as a Maxwell viscoelastic material where, in the one
+dimensional form, stress and strain are related by
 \begin{equation}
   \frac{\partial\bold{\varepsilon}}{\partial t}=\frac{\bold{\sigma}}{\eta} + 
                               \frac{1}{\mu}\frac{\partial\bold{\sigma}}{\partial t}.
@@ -61,43 +61,43 @@ $\eta$ and $\mu$ are viscosity and shear modulus respectively.  This
 constitutive relationship implies that a sudden strain in the
 lithosphere from an earthquake will instantaneously propagate stresses
 through the lithosphere elastically (assuming the lithosphere is
-undergoing quasi-static deformation).  Creep throughout the
-lithosphere will also initiate immediately after the earthquake, where
-the viscous strain rate in each parcel of the lithosphere will be
-proportional to the reciprocal of viscostity in that parcel and
-independent of the viscosity elsewhere.  So long as the stresses from
-the earthquake are large compared to the stresses transferred through
-viscous relaxation, creep will remain approximately proportional to
-the reciprocal of viscosity.  In this early postseismic period, creep
-in each parcel will express itself at the surface with an amplitude
-also proportional to the repicrocal of that parcels viscosity.  The
-surface expression of viscous relaxation throughout the lithosphere
-will then be a linear sum of the surface expression of each parcel.
-This linearity of early postseismic surface deformation with respect
-to lithospheric viscosity is demonstrated below using simple
-anti-plane strain earthquake models where the lithosphere is
-approximated as a layerd halfspace.  We then use the linearity of
-postseismic deformation with respect to lithospheric viscosity to
-construct a simple approximation for early postseismic deformation,
-which greatly facilitates the inverse problem aimed at estimating the
-amount of slip on a fault and lithospheric viscosity.
+undergoing quasi-static deformation).  Creep will also initiate
+immediately after the earthquake, where the viscous strain rate in
+each parcel of the lithosphere will be proportional to the reciprocal
+of viscostity in that parcel and independent of the viscosity
+elsewhere.  Each parcel will continue to creep at approximately that
+rate for as long as the initial elastic stresses from the earthquake
+are large compared to the stresses transferred through viscous
+relaxation.  In this early postseismic period, creep in each parcel
+will express itself as surface deformation with an amplitude also
+proportional to the repicrocal of that parcels viscosity.  The surface
+expression of viscous creep throughout the lithosphere is therefor a
+linear sum of the surface expression of each parcel.  This linearity
+of early postseismic surface deformation with respect to lithospheric
+viscosity is demonstrated below using simple anti-plane strain
+earthquake models where the lithosphere is approximated as a layered
+halfspace.  We use this linearity to construct a simple approximation
+for early postseismic deformation, which greatly facilitates the
+inverse problem aimed at estimating the amount of slip on a fault and
+lithospheric viscosity.
 
 The easiest way to demonstrate how postseismic deformation can be
 linearized with respect to lithospheric viscosity is with a simple two
 dimensional earthquake model which consists of a long, vertical,
-strike-slip fault oriented in the anti-plane direction and embedded in
-a viscoelastic horizontal layer overlying a viscoelastic halfspace.
-We make use of the correspondence principle of viscoelasticity
-\citep{F1975}, which states that the Laplace transform of deformation
-in a viscoelastic body has the same form as the Laplace transform of
-deformation in a elastic body with the same geometry and subjected to
-the same boundary conditions. The solution for displacement following
-an earthquake in a viscoelastic lithosphere can then be easily found
-provided that the solution for displacement in an elastic lithosphere
-with the same geometry is known.  One only needs to replace the shear
-modulus in the Laplace transform of the elastic solution with the
-effective viscoelastic shear modulus and then compute the inverse
-Laplace transform \citep[e.g.][]{HH2005,NM1974,SP1978}.
+surface rupturing, strike-slip fault oriented in the anti-plane
+direction and embedded in a viscoelastic horizontal layer overlying a
+viscoelastic halfspace.  We make use of the correspondence principle
+of viscoelasticity \citep{F1975}, which states that the Laplace
+transform of deformation in a viscoelastic body has the same form as
+the Laplace transform of deformation in a elastic body with the same
+geometry and subjected to the same boundary conditions. The solution
+for displacement following an earthquake in a viscoelastic lithosphere
+can then be easily found provided that the solution for displacement
+in an elastic lithosphere with the same geometry is known.  One only
+needs to replace the shear modulus in the Laplace transform of the
+elastic solution with the effective viscoelastic shear modulus and
+then compute the inverse Laplace transform
+\citep[e.g.][]{HH2005,NM1974,SP1978}.
 
 The appropriate elastic solution to start from
 is given by \citet{R1971}.  Surface displacements, $u_{e}(x,t)$,
@@ -118,9 +118,9 @@ and
 \end{equation}
 In the above equation $b(t)$ describes cummulative slip on the fault
 over time and describes both coseismic slip and afterslip. $D$ is the
-width of the fault, $H$ is the thickness of the upper layer, and
-$\mu_1$ and $\mu_2$ are the shear modulii in the upper layer and lower
-half-space respectively.
+locking depth of the fault, $H$ is the thickness of the upper layer,
+and $\mu_1$ and $\mu_2$ are the shear modulii in the upper layer and
+lower half-space respectively.
 
 We then find the Laplace transform of surface displacements in the
 viscoelastic layered half-space by taking the Laplace transform of eq
@@ -143,9 +143,10 @@ where
   \hat{\mu_1} = \frac{s}{\frac{s}{\mu_1} + \frac{1}{\eta_1}} \,\,\,\,\,\,\,\,  
   \hat{\mu_2} = \frac{s}{\frac{s}{\mu_2} + \frac{1}{\eta_2}}.
 \end{equation}
+
 To find the surface displacements in the time domain one must find the
 inverse Lapace transform of eq (\ref{TwoLayerViscousLaplace}), which
-is typically be done using the method of residues
+is typically done using the method of residues
 \citep[e.g.][]{NM1974}. However, we are interested in characterizing
 the behavior of early postseismic deformation and it better serves
 us to instead perform the inverse Laplace transform with an extension
@@ -162,8 +163,8 @@ displacements in the time domain are then
             b(t)\ast\mathcal{L}^{-1}\left[\sum_{n=1}^\infty\hat{\Gamma}^{n}W(n)\right]
 \end{equation}
 Evaluating the above inverse Laplace transform using the method
-described in the appendix gives us a series expansion of surface
-displacements about $t=0$.
+described in the appendix gives us a series expansion of the surface
+deformation resulting from viscous creep.
 \begin{align}\label{TwoLayerViscous}
   u_v(x,t) = &b(t)\frac{1}{2}W(0) +\nonumber\\
              &b(t)\ast\left(\frac{\mu}{2\eta_2}W(1) - \frac{\mu}{2\eta_1}W(1)\right) +\nonumber\\
@@ -176,13 +177,12 @@ displacements about $t=0$.
 The first term of the series in eq (\ref{TwoLayerViscous}) is the
 surface displacement resulting from the elastic transfer of stresses
 from slip on the fault.  The remaining terms are describing the
-surface deformation resulting from viscous relaxation of those
+surface deformation resulting from viscous creep induced by those
 stresses. Of these remaining terms, the first is the initial rate of
-surface deformation resulting from viscous relaxation of stresses
-induced by a unit of slip and it is convolved with the faults slip
-history.  As suggested, this instantaneous viscous response is a
-linear expression with respect to the inverse viscosity of the two
-layers.
+surface deformation resulting from viscous creep following a unit of
+slip and it is convolved with the fault slip history.  As suggested,
+this initial viscous response is a linear expression with
+respect to the inverse viscosity of the two layers.
 
 If the time since the rupture is sufficiently small compared to the
 relaxation times of each layer, $\eta_i/\mu$, (i.e. the third and
@@ -286,10 +286,11 @@ useful for making estimates of the depth sensitivity of
 postseismic deformation.  
 
 \subsection{Arbitrary Composite Maxwell Model}
-We make the assertion that the initial rate of surface deformation
-resulting from an instantaneous dislocation in any two or three
-dimensional Maxwell viscoelastic medium, which has been arbitrarily
-discretized into N regions, will have the form
+Motivated by our above results, we make the assertion that the initial
+rate of surface deformation resulting from an instantaneous
+dislocation in any two or three dimensional Maxwell viscoelastic
+medium, which has been arbitrarily discretized into N regions, will
+have the form
 \begin{equation}\label{PostseismicInitialVelocity}
   \frac{\delta}{\delta t}u(x,t)\big|_{t=0} = \sum_j^N\frac{1}{\eta_j}G_j(x).
 \end{equation}
@@ -710,7 +711,7 @@ Our synthetic data is characterized by transient near field surface
 deformation followed by a steady rate of more diffuse surface
 deformation.  This is qualitatively similar to postseismic
 deformation following other large ($\geq$ Mw7) earthquakes
-(e.g. Cucapah, Izmit, Landers).  Some have sought to explain this
+(\citep{P2003,P2005,R2007,R2015}).  Some have sought to explain this
 pattern of surface deformation using a more complex lithospheric
 rheology capable of transient deformation. We suggest
 alternatively that fault creep and a relatively high viscosity
@@ -776,15 +777,32 @@ same as performing an inverse Laplace transform on $\hat f(s)$.
 
 \begin{thebibliography}{}
 
+\bibitem[\textit{Ryder et al.}(2007)]{R2007}Ryder, I., Parsons, B.,
+  Wright, T. J., Funning, G. J. (2007). Post-seismic motion
+  following the 1997 Manyi (Tibet) earthquake: InSAR observations and
+  modelling. Geophysical Journal International, 169,
+  1009–1027. doi:10.1111/j.1365-246X.2006.03312.x
+
+\bibitem[\textit{Hetland and Hager}(2003)]{HH2003}Hetland, E. A.,
+  Hager B. H.(2003). Postseismic relaxation across the Central Nevada
+  Seismic Belt. Journal of Geophysical Research, 108(Figure 2),
+  1–13. doi:10.1029/2002JB002257
+
+\bibitem[\textit{Pollitz}(2005)]{P2005}Pollitz,
+  F. F. (2005). Transient rheology of the upper mantle beneath central
+  Alaska inferred from the crustal velocity field following the 2002
+  Denali earthquake. Journal of Geophysical Research B: Solid Earth,
+  110, 1–16. doi:10.1029/2005JB003672
+
 \bibitem[\textit{Hetland and Hager}(2005)]{HH2005} Hetland E a., Hager
   BH. Postseismic and interseismic displacements near a strike-slip
   fault: A two-dimensional theory for general linear viscoelastic
   rheologies. J Geophys Res Solid
   Earth. 2005;110:1-21. doi:10.1029/2005JB003689.
 
-\bibitem[\textit{B\"{u}rgmann et al.}(2002)]{B2002} B\"{u}rgmann R, Ergintav
-  S, Segall P, et al. Time-dependent distributed afterslip on and deep
-  below the İzmit earthquake rupture. Bull Seismol Soc
+\bibitem[\textit{B\"{u}rgmann et al.}(2002)]{B2002} B\"{u}rgmann R,
+  Ergintav S, Segall P, et al. Time-dependent distributed afterslip on
+  and deep below the İzmit earthquake rupture. Bull Seismol Soc
   Am. 2002;92(February):126-137. doi:10.1785/0120000833.
 
 \bibitem[\textit{Harris and Segall}(1987)]{H1987} Harris R a., Segall
