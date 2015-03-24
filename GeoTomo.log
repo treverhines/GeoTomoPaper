@@ -1,10 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.21)  24 MAR 2015 12:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.21)  24 MAR 2015 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\nonstopmode\input GeoTomo.tex
 (./GeoTomo.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
@@ -18,7 +22,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
-\bibindent=\dimen102
+\bibindent=\dimen103
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -41,14 +45,14 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@cnth=\count87
 \Gm@cntv=\count88
 \c@Gm@tempcnt=\count89
-\Gm@bindingoffset=\dimen103
-\Gm@wd@mp=\dimen104
-\Gm@odd@mp=\dimen105
-\Gm@even@mp=\dimen106
-\Gm@layoutwidth=\dimen107
-\Gm@layoutheight=\dimen108
-\Gm@layouthoffset=\dimen109
-\Gm@layoutvoffset=\dimen110
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -73,11 +77,11 @@ Package: amstext 2000/06/29 v2.01
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
-\ex@=\dimen111
+\ex@=\dimen112
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen112
+\pmbraise@=\dimen113
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -94,7 +98,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen113
+\big@size=\dimen114
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count95
@@ -107,12 +111,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \column@=\count100
 \maxfields@=\count101
 \andhelp@=\toks19
-\eqnshift@=\dimen114
-\alignsep@=\dimen115
-\tagshift@=\dimen116
-\tagwidth@=\dimen117
-\totwidth@=\dimen118
-\lineht@=\dimen119
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
 \@envbody=\toks20
 \multlinegap=\skip44
 \multlinetaggap=\skip45
@@ -145,8 +149,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count102
 ))
-\Gin@req@height=\dimen120
-\Gin@req@width=\dimen121
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -213,13 +217,13 @@ LaTeX Font Info:    ... okay on input line 11.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
-\scratchdimen=\dimen122
+\scratchdimen=\dimen123
 \scratchbox=\box28
 \nofMPsegments=\count105
 \nofMParguments=\count106
 \everyMPshowfont=\toks22
 \MPscratchCnt=\count107
-\MPscratchDim=\dimen123
+\MPscratchDim=\dimen124
 \MPnumerator=\count108
 \makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks23
@@ -283,124 +287,136 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 57.
 
-[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
+[2] [3] [4]
+Overfull \hbox (6.29771pt too wide) in paragraph at lines 176--176
+[] 
+ []
+
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [14] [15] [16] [17]
-[18] [19]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
+ [15] [16] [17] [18] [19]
 
-Underfull \hbox (badness 3884) in paragraph at lines 809--813
+LaTeX Warning: Reference `NthDerivative' on page 20 undefined on input line 735
+.
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+[20]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+ [21]
+Underfull \hbox (badness 3884) in paragraph at lines 834--838
 []\OT1/cmr/m/n/12 J^^Sonsson, S., Segall, P., Ped-er-sen, R. & Bjorns-son, G., 
 2003. Post-earthquake
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 809--813
+Underfull \hbox (badness 2426) in paragraph at lines 834--838
 \OT1/cmr/m/n/12 ground move-ments cor-re-lated to pore-pressure tran-sients, \O
 T1/cmr/m/it/12 Na-ture\OT1/cmr/m/n/12 , 424, 179-183.
  []
 
-[20] [21] <FinalFigures/Figure1.pdf, id=82, 492.51581pt x 382.6644pt>
+[22] [23] <FinalFigures/Figure1.pdf, id=87, 492.51581pt x 382.6644pt>
 File: FinalFigures/Figure1.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure1.pdf>
-Package pdftex.def Info: FinalFigures/Figure1.pdf used on input line 902.
+Package pdftex.def Info: FinalFigures/Figure1.pdf used on input line 927.
 (pdftex.def)             Requested size: 375.80544pt x 291.98993pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<FinalFigures/Figure2.pdf, id=83, 540.8883pt x 538.03175pt>
+<FinalFigures/Figure2.pdf, id=88, 540.8883pt x 538.03175pt>
 File: FinalFigures/Figure2.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure2.pdf>
-Package pdftex.def Info: FinalFigures/Figure2.pdf used on input line 913.
+Package pdftex.def Info: FinalFigures/Figure2.pdf used on input line 938.
 (pdftex.def)             Requested size: 422.77664pt x 420.54973pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<FinalFigures/Figure3.pdf, id=84, 568.80951pt x 221.6804pt>
+<FinalFigures/Figure3.pdf, id=89, 568.80951pt x 221.6804pt>
 File: FinalFigures/Figure3.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure3.pdf>
-Package pdftex.def Info: FinalFigures/Figure3.pdf used on input line 925.
+Package pdftex.def Info: FinalFigures/Figure3.pdf used on input line 950.
 (pdftex.def)             Requested size: 422.77664pt x 164.77493pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<FinalFigures/Figure4.pdf, id=85, 570.83165pt x 703.15414pt>
+<FinalFigures/Figure4.pdf, id=90, 570.83165pt x 703.15414pt>
 File: FinalFigures/Figure4.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure4.pdf>
-Package pdftex.def Info: FinalFigures/Figure4.pdf used on input line 939.
+Package pdftex.def Info: FinalFigures/Figure4.pdf used on input line 964.
 (pdftex.def)             Requested size: 422.77664pt x 520.7873pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<FinalFigures/Figure5.pdf, id=86, 550.3634pt x 393.39433pt>
+<FinalFigures/Figure5.pdf, id=91, 550.3634pt x 393.39433pt>
 File: FinalFigures/Figure5.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure5.pdf>
-Package pdftex.def Info: FinalFigures/Figure5.pdf used on input line 952.
+Package pdftex.def Info: FinalFigures/Figure5.pdf used on input line 977.
 (pdftex.def)             Requested size: 422.77664pt x 302.20625pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<FinalFigures/Figure7.pdf, id=87, 564.17201pt x 534.54405pt>
+<FinalFigures/Figure7.pdf, id=92, 564.17201pt x 534.54405pt>
 File: FinalFigures/Figure7.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure7.pdf>
-Package pdftex.def Info: FinalFigures/Figure7.pdf used on input line 976.
+Package pdftex.def Info: FinalFigures/Figure7.pdf used on input line 1001.
 (pdftex.def)             Requested size: 422.77664pt x 400.5808pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22] [23 <./FinalFigures/Figure1.pdf>] [24 <./FinalFigures/Figure2.pdf>]
-[25 <./FinalFigures/Figure3.pdf>] [26 <./FinalFigures/Figure4.pdf>] [27 <./Fina
-lFigures/Figure5.pdf>] [28 <./FinalFigures/Figure7.pdf>] (./GeoTomo.aux) ) 
+[24 <./FinalFigures/Figure1.pdf>] [25 <./FinalFigures/Figure2.pdf>] [26 <./Fina
+lFigures/Figure3.pdf>] [27 <./FinalFigures/Figure4.pdf>] [28 <./FinalFigures/Fi
+gure5.pdf>] [29 <./FinalFigures/Figure7.pdf>] (./GeoTomo.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3387 strings out of 495028
- 45374 string characters out of 6181497
- 112309 words of memory out of 5000000
- 6542 multiletter control sequences out of 15000+600000
+ 3407 strings out of 495028
+ 45712 string characters out of 6181497
+ 110536 words of memory out of 5000000
+ 6559 multiletter control sequences out of 15000+600000
  13371 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,11n,32p,581b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on GeoTomo.pdf (28 pages, 1126494 bytes).
+ 38i,13n,32p,581b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+
+Output written on GeoTomo.pdf (29 pages, 1121922 bytes).
 PDF statistics:
- 5425 PDF objects out of 6186 (max. 8388607)
- 3598 compressed objects within 36 object streams
+ 5424 PDF objects out of 6186 (max. 8388607)
+ 3597 compressed objects within 36 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
