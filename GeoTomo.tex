@@ -496,7 +496,7 @@ fault striking north and dipping $60^{\circ}$ to the east (figure
 surface rupturing right-lateral coseismic slip with a distribution
 shown in figure 2.  After the coseismic slip we impose a constant rate
 of afterslip from $t=0.0$ to $t=0.5$ years.  The cumulative seismic
-moment over this interval is about \%16 that of the coseismic slip.
+moment over this interval is about 16\% that of the coseismic slip.
 The spatial distribution of afterslip is shown in figure 2.  During
 the interval $t=0.5$ to $t=1.0$ years the rate of afterslip is
 decreased by a factor of 2.  From $t=1.0$ year onward we do not impose any
@@ -599,64 +599,54 @@ When looking at inferred values of fluidity (figure 3b), we see that
 the uncertainties are lowest at the surface and increase with depth,
 as is perhaps more intuitive.
 
-We note that our inferred viscosities are strongly influenced by the
-regularization.  Indeed, many far less smooth viscosity structures
-would be able to fit the synthetic data just as well as what is shown
-in figure 3.  Additionally, based on figure 6, larger regularization
-parameters could have been used at only a slight cost to the models
-predictive power.  That is to say, an even smoother viscosity
-structure than that shown would also be able to adequately describe the
-synthetic data.
+%We note that our inferred viscosities are strongly influenced by the
+%regularization.  Indeed, many far less smooth viscosity structures
+%would be able to fit the synthetic data just as well as what is shown
+%in figure 3.  Additionally, based on figure 6, larger regularization
+%parameters could have been used at only a slight cost to the models
+%predictive power.  That is to say, an even smoother viscosity
+%structure than that shown would also be able to adequately describe the
+%synthetic data.
 
 \subsection{solution validation}
 The fact that our recovered fault slip and lithospheric viscosity are
 in good agreement with the synthetic model suggests that the
 approximation given by eq. (\ref{Postseismic_Approximation}) is
-accurate over the ten years of synthetic data.  We will quantify the
-accuracy of eq. (\ref{Postseismic_Approximation}), and thereby eq
-(\ref{PostseismicInitialVelocity}), by running a forward model where
-the imposed fault slip and lithospheric viscosity are those found in
-our recovered model.  We then compare the displacements from the
-numerically computed forward model with the displacements predicted by
-eq. (\ref{Postseismic_Approximation}).  We will refer to the
-numerically computed displacements at time $t$ as
-$\bold{u}_{\mathrm{true}}(t)$ and the displacments at time $t$
-predicted by our approximation as $\bold{u}(t)$.  We define the
-approximation residuals as $\bold{u}(t) - \bold{u}_{\mathrm{true}}(t)$.
+accurate over the ten years of synthetic data.  We quantify the
+accuracy of eq. (\ref{Postseismic_Approximation}) by running a forward
+model with Pylith where the imposed fault slip and lithospheric
+viscosity are those found in our recovered model.  We then compare the
+displacements from the numerically computed forward model with the
+displacements predicted by eq. (\ref{Postseismic_Approximation}).  We
+refer to the numerically computed displacements as
+$\bold{u}_{\mathrm{true}}(t)$ and the displacments predicted by our
+approximation as $\bold{u}(t)$.  We define the approximation residuals
+as 
+\begin{equation}
+\bold{u}(t) - \bold{u}_{\mathrm{true}}(t).
+\end{equation}
 
 Figure 7 shows a map view of the approximation residuals at $t=10.0$
-and $t=20.0$.  The approximation residuals at $t=10.0$ years are small
-(mm's) compared to the magnitude of displacements at this time
-(cm's)(figure 4), indicating that
-eq. (\ref{Postseismic_Approximation}) is indeed a fair approximation
-over these timescales.  The validity of
-eq. (\ref{Postseismic_Approximation}) is more clearly demonstrated in
-figure 5, which shows $\bold{u}(t)$ (black line) and
-$\bold{u}(t)_{\mathrm{true}}$ (red line) at the site closest to the
-fault.  The numerical solution asymptotically approaches the steady
-rate of postseismic deformation predicted by
-eq. (\ref{Postseismic_Approximation}) as the time goes to zero, as
-implied by eq. (\ref{PostseismicInitialVelocity}).  The approximation
-begins to notably diverge from the numerical solution about 10 years
-after the earthquake.
-
-The residuals shown in Figure 7 are in the same direction
-as the viscous deformation (figure 4c) indicating that our
-approximation consistently overestimates the amount of surface
-deformation resulting from viscous relaxation.  The residuals are
-larger at the near field sites than at the far field sites with
-relative magnitude about equal to what is seen in figure 4c.  10 years
-after the earthquake, the error is consistently on order of the
-imposed data uncertainty.  20 years after the earthquake, errors
-become appreciably large for the near field sites.
+and $t=20.0$ years.  The approximation residuals at $t=10.0$ years are
+small (mm's) compared to the magnitude of displacements at this time
+(cm's), indicating that eq. (\ref{Postseismic_Approximation}) is
+indeed a fair approximation over these timescales.  The validity of
+eq. (\ref{Postseismic_Approximation}) is clearly demonstrated in
+figure 5, which shows $\bold{u}(t)$ and $\bold{u}(t)_{\mathrm{true}}$
+at a sample site near the fault.  The numerical solution
+asymptotically approaches the rate of deformation predicted by
+eq. (\ref{Postseismic_Approximation}) as the time goes to zero, which
+demonstrates the validity of eq. (\ref{PostseismicInitialVelocity}).
+The approximation begins to notably diverge from the numerical
+solution about 10 years after the earthquake.
 
 Figure 7 also shows the root mean square error as
 a function of time, $\mathrm{RMSE}(t)$, which we define as
 \begin{equation}
   \mathrm{RMSE}(t) = \frac{\left|\left|\bold{u}(t) -
-    \bold{u}_{\mathrm{true}}(t)\right|\right|_2}{\sqrt{\mathrm{Q}}}
+    \bold{u}_{\mathrm{true}}(t)\right|\right|_2}{\sqrt{\mathrm{R}}}
 \end{equation}
-where Q is the number of elements in $\bold{u}(t)$ and
+where R is the number of elements in $\bold{u}(t)$ and
 $\bold{u}_{\mathrm{true}}(t)$.  The root mean square error describes
 how much we would expect the approximate displacements to deviate from
 the true displacements for a given time.  Generally speaking, our
@@ -717,7 +707,7 @@ nonlinear least squares algorithm where the forward problem requires
 using a FEM rather than eq. \ref{Postseismic_Approximation}
 \section{Conclusion}
 
-\subsection{Appendix}
+\subsection{Appendix A}
 let $f(t)$ and all of its derivatives be continuous and bounded such
 that its Laplace transform exists (i.e. of exponential type).  We
 define the Laplace transform of $f(t)$ as
@@ -756,201 +746,138 @@ same as performing an inverse Laplace transform on $\hat f(s)$.
 
 \begin{thebibliography}{}
 
-\bibitem[\textit{Desbrun et al.}(1999)]{D1999}Desbrun, M., Meyer, M.,
-  Schröder, P., Barr, A. H. (1999). Implicit fairing of irregular
-  meshes using diffusion and curvature flow. Proceedings of the 26th
-  Annual Conference on Computer Graphics and Interactive Techniques -
-  SIGGRAPH ’99, 33, 317–324. http://doi.org/10.1145/311535.311576
+\bibitem[\textit{Desbrun et al.}(1999)]{D1999} Desbrun, M., Meyer, M.,
+  Schr\"oder, P. \& Barr, A.H., 1999.  Implicit fairing of irregular
+  meshes using diffusion and curvature flow, \textit{Proceedings of
+    the 26th Annual Conference on Computer Graphics and Interactive
+    Techniques}, 317–324. doi:10.1145/311535.311576.
 
-\bibitem[\textit{Ryder et al.}(2007)]{R2007}Ryder, I., Parsons, B.,
-  Wright, T. J., Funning, G. J. (2007). Post-seismic motion
-  following the 1997 Manyi (Tibet) earthquake: InSAR observations and
-  modelling. Geophysical Journal International, 169,
-  1009–1027. doi:10.1111/j.1365-246X.2006.03312.x
+\bibitem[\textit{Ryder et al.}(2007)]{R2007} Ryder, I., Parsons, B.,
+  Wright, T.J. \& Funning, G.J., 2007.  Post-seismic motion following
+  the 1997 Manyi (Tibet) earthquake: InSAR observations and
+  modelling, \textit{Geophysical Journal International}, 169,
+  1009–1027. doi:10.1111/j.1365-246X.2006.03312.x.
 
-\bibitem[\textit{Hetland and Hager}(2003)]{HH2003}Hetland, E. A.,
-  Hager B. H.(2003). Postseismic relaxation across the Central Nevada
-  Seismic Belt. Journal of Geophysical Research, 108(Figure 2),
-  1–13. doi:10.1029/2002JB002257
+\bibitem[\textit{Hetland \& Hager}(2003)]{HH2003} Hetland, E.A. \&
+  Hager B.H., 2003. Postseismic relaxation across the Central
+    Nevada Seismic Belt, \textit{Journal of Geophysical Research}, 108,
+  1–13. doi:10.1029/2002JB002257.
 
-\bibitem[\textit{Pollitz}(2005)]{P2005}Pollitz,
-  F. F. (2005). Transient rheology of the upper mantle beneath central
-  Alaska inferred from the crustal velocity field following the 2002
-  Denali earthquake. Journal of Geophysical Research B: Solid Earth,
-  110, 1–16. doi:10.1029/2005JB003672
+\bibitem[\textit{Pollitz}(2005)]{P2005}Pollitz, F.F., 2005. Transient
+  rheology of the upper mantle beneath central Alaska inferred from
+  the crustal velocity field following the 2002 Denali earthquake,
+  \textit{Journal of Geophysical Research: Solid Earth}, 110,
+  1–16. doi:10.1029/2005JB003672.
 
-\bibitem[\textit{Hetland and Hager}(2005)]{HH2005} Hetland E a., Hager
-  BH. Postseismic and interseismic displacements near a strike-slip
-  fault: A two-dimensional theory for general linear viscoelastic
-  rheologies. J Geophys Res Solid
-  Earth. 2005;110:1-21. doi:10.1029/2005JB003689.
+\bibitem[\textit{Hetland \& Hager}(2005)]{HH2005} Hetland, E.A. \&
+  Hager, B.H., 2005. Postseismic and interseismic displacements near a
+  strike-slip fault: A two-dimensional theory for general linear
+  viscoelastic rheologies. \textit{J. Geophys. Res. Solid Earth}, 110,
+  1-21. doi:10.1029/2005JB003689.
 
-\bibitem[\textit{B\"{u}rgmann et al.}(2002)]{B2002} B\"{u}rgmann R,
-  Ergintav S, Segall P, et al. Time-dependent distributed afterslip on
-  and deep below the İzmit earthquake rupture. Bull Seismol Soc
-  Am. 2002;92(February):126-137. doi:10.1785/0120000833.
+\bibitem[\textit{B\"urgmann et al.}(2002)]{B2002} B\"urgmann, R.,
+  Ergintav, S., Segall, P., Hearn, E.H., McClusky, S., Reilinger,
+  R.E., Woith, H. \& Zschau, J., 2002. Time-dependent distributed
+  afterslip on and deep below the \.Izmit earthquake rupture,
+  \textit{Bull.  Seismol. Soc. Am.}, 92,
+  126-137. doi:10.1785/0120000833.
 
-\bibitem[\textit{Harris and Segall}(1987)]{H1987} Harris R a., Segall
-  P. Detection of a locked zone at depth on the Parkfield, California,
-  segment of the San Andreas Fault. J Geophys
-  Res. 1987;92:7945. doi:10.1029/JB092iB08p07945.
+\bibitem[\textit{Harris \& Segall}(1987)]{H1987} Harris, R.A. \&
+  Segall, P., 1987. Detection of a locked zone at depth on the
+  Parkfield, California, segment of the San Andreas
+  Fault. \textit{J. Geophys. Res.}, 92,
+  7945-7962. doi:10.1029/JB092iB08p07945.
 
-\bibitem[\textit{J\'onsson et al.}(2003)]{J2003} J\'onsson S, Segall P, Pedersen
-  R, Bjornsson G. Letters To
-  Nature. Nature. 2003;424(July):179-183. doi:10.1038/nature01758.1.
+\bibitem[\textit{J\'onsson et al.}(2003)]{J2003} J\'onsson, S.,
+  Segall, P., Pedersen, R. \& Bjornsson, G., 2003. Post-earthquake
+  ground movements correlated to pore-pressure transients,
+  \textit{Nature}, 424, 179-183. doi:10.1038/nature01758.1.
 
-\bibitem[\textit{Peltzer et al.}(1998)]{P1998} Peltzer G, Rosen P,
-  Rogez F, Hudnut K. Poroelastic rebound along the Landers 1992
-  earthquake surface rupture. J Geophys
-  Res. 1998;103(B12):30131. doi:10.1029/98JB02302.
+\bibitem[\textit{Peltzer et al.}(1998)]{P1998} Peltzer, G., Rosen, P.,
+  Rogez, F. \& Hudnut, K., 1998. Poroelastic rebound along the Landers
+  1992 earthquake surface rupture. \textit{J. Geophys. Res.}, 103,
+  30131-30145. doi:10.1029/98JB02302.
 
-\bibitem[\textit{Pollitz}(2003)]{P2003} Pollitz FF. Transient rheology
-  of the uppermost mantle beneath the Mojave Desert, California. Earth
-  Planet Sci Lett. 2003;215:89-104. doi:10.1016/S0012-821X(03)00432-1.
+\bibitem[\textit{Pollitz}(2003)]{P2003} Pollitz, F.F., 2003. Transient
+  rheology of the uppermost mantle beneath the Mojave Desert,
+  California, \textit{Earth Planet Sci. Lett.}, 215,
+  89-104. doi:10.1016/S0012-821X(03)00432-1.
 
-\bibitem[\textit{Riva and Govers}(2008)]{RG2008} Riva R E M, Govers
-  R. Relating viscosities from postseismic relaxation to a realistic
-  viscosity structure for the lithosphere. Geophys J
-  Int. 2009;176:614-624. doi:10.1111/j.1365-246X.2008.04004.x.
+\bibitem[\textit{Riva \& Govers}(2008)]{RG2008} Riva, R.E.M. \&
+  Govers, R., 2009. Relating viscosities from postseismic relaxation
+  to a realistic viscosity structure for the
+  lithosphere. \textit{Geophys. J.  Int.}, 176,
+  614-624. doi:10.1111/j.1365-246X.2008.04004.x.
 
-\bibitem[\textit{Hines and Hetland}(2013)]{H2013} Hines T T and
-  Hetland E A Bias in estimates of lithosphere viscosity from
-  interseismic deformation. Geophys Res
-  Lett. 2013;40(August):4260-4265. doi:10.1002/grl.50839.
+\bibitem[\textit{Hines \& Hetland}(2013)]{H2013} Hines, T.T. \&
+  Hetland, E.A., 2013. Bias in estimates of lithosphere viscosity from
+  interseismic deformation, \textit{Geophys. Res. Lett.}, 40,
+  4260-4265. doi:10.1002/grl.50839.
 
-\bibitem[\textit{Rollins et al.}(2015)]{R2015} Rollins C, Barbot S,
-  Avouac J-P. Postseismic Deformation Following the 2010 M=7.2 : 2 El
-  Mayor-Cucapah Earthquake : Observations , Kinematic Inversions , and
-  Dynamic Models. Pure Appl
-  Geophys. 2015. doi:10.1007/s00024-014-1005-6.
+\bibitem[\textit{Rollins et al.}(2015)]{R2015} Rollins, C., Barbot,
+  S. \& Avouac, J-P. 2015, Postseismic Deformation Following the 2010
+  Mw7.2 El Mayor-Cucapah Earthquake: Observations, Kinematic
+  Inversions, and Dynamic Models, \textit{Pure Appl. Geophys.},
+  doi:10.1007/s00024-014-1005-6.
 
-\bibitem[\textit{Marone et al.}(1991)]{M1991} Marone CJ, Scholz CH,
-  Bilham R. On the mechanics of earthquake afterslip. J Geophys
-  Res. 1991;96(B5):8441-8452.
+\bibitem[\textit{Marone et al.}(1991)]{M1991} Marone, C.J., Scholz,
+  C.H.  \& Bilham, R., 1991. On the mechanics of earthquake
+  afterslip, \textit{J. Geophys. Res.}, 96, 8441-8452.
 
-\bibitem[\textit{Barbot et al.}(2009)]{B2009} Barbot S, Fialko Y, Bock
-  Y. Postseismic deformation due to the Mw 6.0 2004 Parkfield
+\bibitem[\textit{Barbot et al.}(2009)]{B2009} Barbot, S., Fialko, Y. \& Bock,
+  Y., 2009. Postseismic deformation due to the Mw 6.0 2004 Parkfield
   earthquake: Stress-driven creep on a fault with spatially variable
-  rate-and-state friction parameters. J Geophys Res Solid
-  Earth. 2009;114:1-26. doi:10.1029/2008JB005748.
+  rate-and-state friction parameters, \textit{J. Geophys. Res. Solid
+  Earth}, 114, 1-26. doi:10.1029/2008JB005748.
 
-%\bibitem[\textit{Pollitz}(2014)]{P2014} Pollitz, F. F. (2014),
-%  Post-earthquake relaxation evidence for laterally variable
-%  viscoelastic structure and elevated water concentration in the
-%  southwestern California mantle, {\textit{J. Geophys. Res.}}, in review
+\bibitem[\textit{Freed}(2007)]{F2007} Freed, A.M., 2007. Afterslip
+  (and only afterslip) following the 2004 Parkfield, California,
+  earthquake, \textit{Geophys. Res. Lett.}, 34,
+  1-5. doi:10.1029/2006GL029155.
 
-\bibitem[\textit{Freed}(2007)]{F2007} Freed AM. Afterslip (and only
-  afterslip) following the 2004 Parkfield, California,
-  earthquake. Geophys Res Lett. 2007;34:1-5. doi:10.1029/2006GL029155.
+\bibitem[\textit{Segall}(2010)]{S2010} Segall, P., 2010. Earthquake and
+  volcano deformation, pp 185-186, Princeton University Press.
 
-%\bibitem[\textit{Gonzalez-Ortega et al.}(2014)]{G2014} Gonzalez-ortega A,
-%  Fialko Y, Sandwell D, et al. Journal of Geophysical Research : Solid
-%  Earth. J Geophys
-%  Res. 2014;119:1482-1497. doi:10.1002/2013JB010193.Received.
-
-%\bibitem[\textit{Hauksson et al.}(2011)]{E2011} Hauksson, E.,
-%  J. Stock, K. Hutton, W. Yang, J. Antonio Vidal-Villegas, H. Kanamori
-%  (2011), The 2010 Mw 7.2 El Mayor-Cucapah Earthquake Sequence, Baja
-%  California, Mexico and Southernmost California, USA: Active
-%  Seismotectonics along the Mexican Pacific Margin, {\textit{Pure
-%    Appl. Geophys.}}, \textit{168}, 1255-1277, DOI:
-%  10.1007/s00024-010-0209-7
-
-\bibitem[\textit{Segall}(2010)]{S2010} Segall, Paul. Earthquake and
-  volcano deformation. Princeton University Press, 2010.
-
-\bibitem[\textit{Hearn et al.}(2008)]{H2008} Hearn EH, McClusky S, Ergintav S,
-  Reilinger RE. Izmit earthquake postseismic deformation and dynamics
-  of the North Anatolian Fault Zone. J Geophys Res Solid
-  Earth. 2009;114(August 2008):1-21. doi:10.1029/2008JB006026.
-
-%\bibitem[\textit{Kroll et al.}(2013)]{K2013} Kroll, K. A.,
-%  E. S. Cochran, K. B. Richards-Dinger, D. F. Sumy (2013), Aftershocks
-%  of the 2010 Mw 7.2 El Mayor-Cucapah earthquake reveal complex
-%  faulting in the Yuha Desert, California, {\textit{J. Gephys. Res.}},
-%  \textit{118}, 6146-6164, DOI: 10.1002/2013JB010529
-
-%\bibitem[\textit{Wei et al.}(2011A)]{W2011A} Wei, M., D. Sandwell,
-%  Y. Fialko, R. Bilham (2011), Slip on faults in the Imperial Valley
-%  triggered by the 4 April 2010 Mw 7.2 El Mayor-Cucapah earthquake
-%  revealed by InSAR, {\textit{Geophys. Res. Lett.}}, \textit{38},
-%  L01308, DOI: 10.1029/2010GL045235
-
-%\bibitem[\textit{Wei et al.}(2011B)]{W2011B} Wei, S., E. Fielding,
-%  S. Leprince, A. Sladen, J. Avouac, D. Helmberger, E. Hauksson,
-%  R. Chu, M. Simons, K. Hudnut, T. Herring, R. Briggs (2011),
-%  Superficial simplicity of the 2010 El Mayor-Cucapah earthquake of
-%  Baja California in Mexico, {\textit{Nature}}, \textit{4}, 615-618,
-%  DOI: 10.1038/ngeo1213
-
-%\bibitem[\textit{Wei et al.}(2013)]{W2013} Wei, S., D. Helmberger,
-%  S. Owen, R. W. Graves, K. W. Hudnut, E. J. Fielding (2013),
-%  Complementary slip distribution of the largest earthquakes in the
-%  2012 Brawley swarm, Imperial Valley, California,
-%  {\textit{Geophys. Res. Lett.}}, \textit{40}, 847-852, DOI:
-%  10.1002/grl.50259
+\bibitem[\textit{Hearn et al.}(2008)]{H2008} Hearn, E.H., McClusky,
+  S., Ergintav, S. \& Reilinger, R.E., 2009. \.Izmit earthquake
+  postseismic deformation and dynamics of the North Anatolian Fault
+  Zone. \textit{J.Geophys. Res. Solid Earth}, 114,
+  1-21. doi:10.1029/2008JB006026.
 
 \bibitem[\textit{Fl\"ugge}(1975)]{F1975} Fl\"ugge,
-  Wilhelm. Viscoelasticity. Springer-Verlag Berlin Heidelberg, (1975).
+  W., 1975. Viscoelasticity, Springer-Verlag Berlin Heidelberg.
 
-\bibitem[\textit{Lawson and Hanson}(1974)]{LH1974} Lawson, C. L. and
-  R. J. Hanson (1974), Solving least squares problems, {\textit{161}},
-  Englewood Cliffs, NJ: Prentice-hall
+\bibitem[\textit{Lawson \& Hanson}(1995)]{LH1974} Lawson, C.L. \&
+  Hanson, R.J., 1995. Solving least Squares Problems, SIAM.
 
-\bibitem[\textit{Chinnery and Jovanovich}(1972)]{CJ1972} Chinnery,
-  M. A. and D. B. Jovanovich (1972), Effect of earth layering on
-  earthquake displacement fields, {\textit{Bulletin of Seismological
-      Society of America}}, \textit{62}, 1629-1639
+\bibitem[\textit{Chinnery \& Jovanovich}(1972)]{CJ1972} Chinnery,
+  M.A. \& Jovanovich, D.B., 1972. Effect of earth layering on
+  earthquake displacement fields, \textit{Bull. Seismol.  Soc. Am.},
+  62, 1629-1639.
 
-\bibitem[\textit{Rybicki}(1971)]{R1971} Rybicki, K. (19710, The
-  elastic residual field of a very long strike-slip fault in the
-  presence of a discontinuity, {\textit{Bull. Seism. Soc. Am.}},
-  \textit{61}, 79-92
+\bibitem[\textit{Rybicki}(1971)]{R1971} Rybicki, K., 1971. The elastic
+  residual field of a very long strike-slip fault in the presence of a
+  discontinuity, \textit{Bull. Seism. Soc. Am.}, 61, 79-92.
 
-\bibitem[\textit{Nur and Mavko}(1974)]{NM1974} Nur, A. and G. Mavko
-  (1974), Postseismic Viscoelastic Rebound, {\textit{Science}},
-  \textit{183}, 204-206, DOI: 10.1126/science.183.4121.204
+\bibitem[\textit{Nur \& Mavko}(1974)]{NM1974} Nur, A. \& Mavko, G.,
+  1974. Postseismic Viscoelastic Rebound, \textit{Science}, 183,
+  204-206. doi:10.1126/science.183.4121.204.
 
-\bibitem[\textit{Savage and Prescott}(1978)]{SP1978} Savage, J. and
-  W. Prescott (1978), Asthenosphere readjustment and the earthquake
-  cycle, {\it J. Geophys. Res.}, \textit{83}, 3369-3376
+\bibitem[\textit{Savage \& Prescott}(1978)]{SP1978} Savage, J. \&
+  Prescott, W., 1978. Asthenosphere readjustment and the earthquake
+  cycle, \textit{J. Geophys. Res.}, 83, 3369-3376.
 
-\bibitem[\textit{Aster et al.}(2013)]{A2013} Aster, R. C., B. Borchers,
-  C. H. Thurber (2013), Parameter estimation and inverse
-  problems, {\textit{Academic Press}}
+\bibitem[\textit{Aster et al.}(2013)]{A2013} Aster, R.C., Borchers,
+  B., Thurber, C.H., 2013. Parameter estimation and inverse problems,
+  {\textit{Academic Press}}.
 
-%\bibitem[\textit{Pollitz et al.}(2012)]{P2012} Pollitz, F. F.,
-%  R. Burgmann, W. Thatcher (2012), Illumination of rheologic mantle
-%  heterogeneity by the M7.2 2010 El Mayor-Cucapah earthquake,
-%  {\textit{Gechem. Geophys. Geosyst.}}, \textit{13}, Q06002,
-%  DOI:10.1029/2012GC004139
-
-%\bibitem[\textit{Lekic et al.}(2011)]{L2011} Lekic, V., S. W. French,
-%  K. M. Fischer (2011), Lithosphere Thinning Beneath Rifter Regions of
-%  Southern California, {\textit{Science}}, \textit{334}, 783-787, DOI:
-%  10.1126/science.1208898
-
-%\bibitem[\textit{Okada}(1992)]{O1992} Okada, Y. (1992), Internal
-%  deformation due to shear and tensile faults in a half-space,
-%  {\textit{Bull. Seism. Soc. Am.}}, \textit{82}, 1018-1040
-
-%\bibitem[\textit{Oskin et al.}(2012)]{O2012} Oskin, M. E., Arrowsmith,
-%  J. R., Corona, a. H., Elliott, a. J., Fletcher, J. M., Fielding,
-%  E. J., … Teran, O. J. (2012). Near-Field Deformation from the El
-%  Mayor-Cucapah Earthquake Revealed by Differential LIDAR. Science,
-%  335(February), 702–705. doi:10.1126/science.1213778
-
-\bibitem[\textit{Tikhonov and Arsenin}(1978)]{TA1978} Tikhonov AN,
-  Arsenin VY. Solutions of Ill-Posed Problems. Math
-  Comput. 1978;32:1320-1322. doi:10.2307/2006360.
-
-\bibitem[\textit{Aagard et al.}(2007)]{A2007} Aagaard B, Williams C,
-  Knepley M. PyLith: A Finite-Element Code for Modeling Quasi-Static
-  and Dynamic Crustal Deformation. eos. 2007;88(52):T21B - 0592.
+\bibitem[\textit{Aagard et al.}(2013)]{A2007} Aagaard, B.T., Knepley,
+  M.G. \& Williams, C.A., 2013. A domain decomposition approach to
+  implementing fault slip in finite-element models of quasi-static and
+  dynamic crustal deformation, \textit{Journal of Geophysical
+    Research: Solid Earth}, 118, doi: 10.1002/jgrb.50217.
 
 \end{thebibliography}
-
-
 
 \begin{figure}[h!]\label{figure1}
   \centering
