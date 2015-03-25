@@ -704,35 +704,38 @@ nonlinear least squares algorithm where the forward problem requires
 using a FEM rather than eq. \ref{Postseismic_Approximation}
 \section{Conclusion}
 
-\subsection{Appendix A}
-let $f(t)$ and all of its derivatives be continuous and bounded such
-that its Laplace transform exists (i.e. of exponential type).  We
-define the Laplace transform of $f(t)$ as
+\appendix
+\section{Inverse Laplace transorm through series expansion}
+
+let $f(t)$ and all of its derivatives be continuous and bounded such 
+that there exists a real valued $M_o$, $C_o$ and $t_o$ that satisfies
+\begin{equation}
+  f^{(n)}(t) < C_oe^{M_ot}\ \forall\ t > t_o.
+\end{equation}
+The Laplace transform of $f(t)$ is defined as
 \begin{equation}
   \mathcal{L}[f(t)] := \hat{f}(s) := \int_{0}^\infty f(t)e^{-st}dt.
 \end{equation}
-It can be easily shown using integration by parts that the Laplace
-transform of the $n^{th}$ derivative of $f(t)$ is
-\begin{equation}\label{Property1}
-  \mathcal{L}[f^{(n)}(t)] = s^n\hat{f}(s) - \sum_{m=1}^ns^{m-1}f^{(n-m)}(0).
-\end{equation}
-Since we assert that $f(t)$ and its derivatives are of of exponential
-type, we know that
+Our imposed bounds on $f^{(n)}(t)$ ensures that
 \begin{equation}\label{Property2}
   \lim_{s \to \infty}\mathcal{L}[f^{(n)}(t)] = 0.
 \end{equation}
-Substituting eq (\ref{Property1}) into eq (\ref{Property2}) and then
-rearranging the terms gives us a recursive formula for
-$f^{(n)}(0)$ in terms of $\hat{f}(s)$:
-\begin{equation}\label{NthDerivative}
+It can be easily shown using integration by parts that
+\begin{equation}\label{Property1}
+  \mathcal{L}[f^{(n)}(t)] = s^n\hat{f}(s) - \sum_{m=1}^ns^{m-1}f^{(n-m)}(0).
+\end{equation}
+Substituting eq. (\ref{Property1}) into eq. (\ref{Property2}) and then
+rearranging the terms gives us a recursive formula for $f^{(n)}(0)$ in
+terms of $\hat{f}(s)$:
+\begin{equation}\label{NthDeriv}
   f^{(n)}(0) = 
   \begin{cases}
-    \lim_{s \to \infty} \big( s\hat{f}(s)\big)\nonumber, &\text{if }n = 0\\
-    \lim_{s \to \infty} \big( s^{n + 1}\hat{f}(s) - \sum_{m=0}^{n-1}
-    s^{m+1}f^{(n-m-1)}(0)\big), &\text{if }n > 0
+    \lim_{s \to \infty} \big( s\hat{f}(s)\big),& \text{if } n=0\\
+    \lim_{s \to \infty} \big( s^{n + 1}\hat{f}(s) - 
+                     \sum_{m=0}^{n-1} s^{m+1}f^{(n-m-1)}(0)\big),& \text{if } n > 0
   \end{cases}
 \end{equation}
-We can use eq (\ref{NthDerivative}) to construct a Taylor series
+We can use eq. (\ref{NthDeriv}) to construct a Taylor series
 expansion of $f(t)$ about $t=0$,
 \begin{equation}
   f(t) = \sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}t^n.
