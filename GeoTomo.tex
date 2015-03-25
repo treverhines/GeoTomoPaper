@@ -608,84 +608,96 @@ $\bold{u}_{\mathrm{true}}(t)$ and the displacments predicted by our
 approximation as $\bold{u}(t)$.  We define the approximation residuals
 as $\bold{u}(t) - \bold{u}_{\mathrm{true}}(t)$.
 
-Figure 7 shows a map view of the approximation residuals at $t=10.0$
-and $t=20.0$ years.  The approximation residuals at $t=10.0$ years are
-small (mm's) compared to the magnitude of displacements at this time
-(cm's), indicating that eq. (\ref{Postseismic_Approximation}) is
-indeed a fair approximation over these timescales.  The validity of
-eq. (\ref{Postseismic_Approximation}) is clearly demonstrated in
-figure 5, which shows $\bold{u}(t)$ and $\bold{u}(t)_{\mathrm{true}}$
-at a sample site near the fault.  The numerical solution
-asymptotically approaches the rate of deformation predicted by
-eq. (\ref{Postseismic_Approximation}) as the time goes to zero, which
-demonstrates the validity of eq. (\ref{PostseismicInitialVelocity}).
-The approximation begins to notably diverge from the numerical
-solution about 10 years after the earthquake.
+At $t=10.0$ years the approximation residuals are on order of a couple
+mm's in length for each location and are small compared to the cm's of
+deformation resulting from viscoelastic relaxation (figure 7),
+indicating that eq. (\ref{Postseismic_Approximation}) is indeed a fair
+approximation.  At $t=20$ years the approximation residuals are about
+one cm in magnitude for near field sites, while the residuals are
+still on order of a few mm's for the far field sites.  The faster
+divergence for the near field sites is consistent with the comparison
+we made between the approximate and true displacements for a
+two-dimensional, two layered earthquake model in section 3.1.1.
 
-Figure 7 also shows the root mean square error as
-a function of time which we define as
-\begin{equation}
-  \mathrm{RMSE}(t) = \frac{\left|\left|\bold{u}(t) -
-    \bold{u}_{\mathrm{true}}(t)\right|\right|_2}{\sqrt{\mathrm{R}}},
-\end{equation}
-where R is the number of elements in $\bold{u}(t)$ and
-$\bold{u}_{\mathrm{true}}(t)$.  The root mean square error describes
-how much we would expect the approximate displacements to deviate from
-the true displacements for a given time.  Generally speaking, our
-approximation can be considered reasonably accurate when the root mean square error
-is lower than the observation uncertainty.  The RMSE increases
-quadratically from 0 at $t=0$ to a few millimeters at $t=20$.  When
-considering that noise for geodetic observations is also on order of a
-few millimeters, this approximation appears to be sufficiently
-accurate for at least up until $t=10$ years.
+The accuracy of eq. (\ref{Postseismic_Approximation}) is also
+demonstrated in figure 5, which shows $\bold{u}(t)$ and
+$\bold{u}(t)_{\mathrm{true}}$ at a sample site near the fault.  The
+numerical solution asymptotically approaches the rate of deformation
+predicted by eq. (\ref{Postseismic_Approximation}) as time goes to
+zero, demonstrating that eq. (\ref{PostseismicInitialVelocity})
+accurately descibes the initial viscoelastic response.  Additionally,
+the magnitude of the difference between $\bold{u}(t)$ and
+$\bold{u}_{\mathrm{true}}(t)$ is smaller than the uncertainty on our synthetic
+data throughout the time series, indicating that our approximation is
+appropriate for this synthetic test.
+
+%Figure 7 also shows the root mean square error as
+%a function of time which we define as
+%\begin{equation}
+%  \mathrm{RMSE}(t) = \frac{\left|\left|\bold{u}(t) -
+%    \bold{u}_{\mathrm{true}}(t)\right|\right|_2}{\sqrt{\mathrm{R}}},
+%\end{equation}
+%where R is the number of elements in $\bold{u}(t)$ and
+%$\bold{u}_{\mathrm{true}}(t)$.  The root mean square error describes
+%the average amount that the approximate displacements deviate from
+%the true displacements for a given time.  The RMSE increases
+%quadratically from 0 at $t=0$ to a few millimeters at $t=20$. 
 
 \section{Discussion}
 
-Our method for estimating slip and viscosity from postseismic
-deformation makes the assumption that the timescale of relaxation in
-the lithosphere is greater than or about equal to the timescales over
-which postseismic deformation is observed.  Since the lithosphere's
-relaxation time is generally not well known, there is the added
-complication of deciding how much of a postseismic timeseries to use
-in the above described inverse method.  We conveniently picked the
-length of our timeseries to correspond with the weakest relaxation
-time in the lithosphere; however, the length of the timeseries could
-have also been determined iteratively.  If the approximation given by
+A fundemental assumption in our method for estimating slip and
+viscosity from postseismic deformation is that the timescale of
+relaxation in the lithosphere is greater than or about equal to the
+timescales over which postseismic deformation is observed.  This
+assumption allows us to approximate the surface expression of viscous
+creep as a linear system with respect to lithospheric fluidity, which
+greatly facilitates and expedites the inverse problem.  However, the
+lithosphere's relaxation time is generally not well known, and in
+practice, we do not know how the relaxation time in the lithosphere
+compares to the timescale of postseismic deformation.  There is then
+an added complication of deciding how much of a postseismic timeseries
+to use in the inverse problem.  In our synthetic example, we
+conveniently picked the length of our timeseries to correspond with
+the weakest relaxation time in the lithosphere; however, the length of
+the timeseries could have also been determined iterative.  For
+example, if the approximation given by
 eq. (\ref{Postseismic_Approximation}) is incapable of adequately
-describing obersvations, then it is likely that the timeseries used in
-the inversion is too long.  One can reduce the length of the
-postseismic timeseries used in the inversion until an adequate fit is
-found.
+describing the observed postseismic deformation, then it is possible
+that the length of the timeseries used in the inversion exceeds the
+time interval over which eq. (\ref{Postseismic_Approximation}) is
+appropriate.  One can reduce the length of the postseismic timeseries
+used in the inversion until an adequate fit is found. The unused
+portion of the time series could further constrain estimates of fault
+slip and lithospheric viscosity by including it in a gradient based
+nonlinear inverse method where the forward problem is computed
+numerically rather that with eq. (\ref{Postseismic_Approximation}). In
+such case, the initial guess for the model parameters should be the
+estimate of slip and viscosity made using the truncated time series.
 
 Our synthetic data is characterized by transient near field surface
 deformation followed by a steady rate of more diffuse surface
-deformation.  This is qualitatively similar to postseismic
-deformation following other large ($\geq$ Mw7) earthquakes
-(\citep{P2003,P2005,R2007,R2015}).  Some have sought to explain this
-pattern of surface deformation using a more complex lithospheric
-rheology capable of transient deformation. We suggest
-alternatively that fault creep and a relatively high viscosity
-lithosphere would also be capable of describing the commonly observed
-patterns of postseismic deformation.  In such case, our method
-described here would allow us to easily constrain the amount of slip
-and the lithospheric viscosity necessary to describe observed
-postseismic deformation
+deformation (figures 4 and 5).  This is qualitatively similar to
+postseismic deformation following other large ($\geq$ Mw7) earthquakes
+\citep[e.g.][]{E2009}.  Some researchers have proposed using
+lithospheric rheologies other than Maxwell viscoelasticity to explain
+this behavior \citep[e.g.][]{HH2005,P2005,P2003,F2006b}. We suggest
+alternatively that fault creep and a relatively high viscosity Maxwell
+viscoelastic lithosphere could also describe postseismic transient
+deformation.  
 
-Laboratory studies suggest that the lithospheres rheology is generally
-nonlinear with respect to stress, contradicting our assumption that
-the lithosphere is Maxwell viscoelastic.  However, the above described
-approximation assumes that stresses in the lithosphere are not
-significantly different from the stresses induced from fault slip.
-Under the assumption of constant stress, a material with a nonlinear
-rheology will behave as a Maxwell viscoelastic material and it will
-have an effective Maxwell viscosity.  This means that viscosities
-inferred using the above inverse method can be instead interpretted as
-the effective Maxwell viscosities for the current state of stress in
-the lithosphere.
+Although, our inverse method assumes that the lithosphere is Maxwell
+viscoelastic on the timescales of postseismic deformationl, we do not
+preclude the possibility of a stress-nonlinear rheology \citep[e.g.][]{HK2003}.
+the approximation given by eq. (\ref{Postseismic_Approximation})
+assumes that stresses in the lithosphere are not significantly
+different from the stresses induced from fault slip.  Under the
+assumption of constant stress, a material with a nonlinear rheology
+will behave as a Maxwell viscoelastic material and it will have an
+effective Maxwell viscosity.  This means that viscosities inferred
+using the above inverse method can be instead interpretted as the
+effective Maxwell viscosities for the current state of stress in the
+lithosphere.
 
-Discuss how the solution found here can be used as a first step in a
-nonlinear least squares algorithm where the forward problem requires
-using a FEM rather than eq. \ref{Postseismic_Approximation}
 \section{Conclusion}
 
 \appendix
@@ -731,6 +743,19 @@ convergence.
 
 \begin{thebibliography}{}
 
+\bibitem[\textit{Hirth \& Kohlstedt}(2003)]{HK2003} Hirth, G. \&
+  Kohlstedt, D.L., 2003. Rheology of the Upper Mantle and the Mantle
+  Wedge : A View from the Experimentalists, \textit{Geophysical
+    Monograph}, 138, 83-105. doi:10.1029/138GM06.
+
+\bibitem[\textit{Ergintav et al.}(2009)]{E2009} Ergintav, S.,
+  McClusky, S., Hearn, E., Reilinger, R., Cakmak, R., Herrring, T.,
+  Ozener, H., Lenk, O. \& Tari, E., 2009. Seven years of postseismic
+  deformation following the 1999, M = 7.4 and M = 7.2,
+  \.Izmit-D\"uzce, Turkey earthquake
+  sequence. \textit{J. Geophys. Res. Solid Earth},
+  114. doi:10.1029/2008JB006021.
+
 \bibitem[\textit{Fukahata \& Matsu'ura}(2006)]{FM2006} Fukahata, Y.,
   Matsu’ura, M., 2006. Quasi-static internal deformation due to a
   dislocation source in a multilayered elastic/viscoelastic half-space
@@ -764,7 +789,13 @@ convergence.
   earthquake. \textit{Geophys. J.  Int.}, 176,
   670-682. doi:10.1111/j.1365-246X.2008.04029.x.
 
-\bibitem[\textit{Freed et al.}(2006)]{F2006} Freed, A.M., B\"urgmann,
+\bibitem[\textit{Freed et al.}(2006b)]{F2006b} Freed, A.M.,
+  B\"urgmann, R., Calais, E. \& Freymueller, J.,
+  2006. Stress-dependent power-law flow in the upper mantle following
+  the 2002 Denali, Alaska, earthquake, \textit{Earth
+    Planet. Sci. Lett.}, 252, 481-489. doi:10.1016/j.epsl.2006.10.011.
+
+\bibitem[\textit{Freed et al.}(2006a)]{F2006} Freed, A.M., B\"urgmann,
   R., Calais, E., Freymueller, J. \& Hreinsd\'ottir, S.,
   2006. Implications of deformation following the 2002 Denali, Alaska,
   earthquake for postseismic relaxation processes and lithospheric
