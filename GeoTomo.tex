@@ -3,9 +3,8 @@
 \usepackage{timet}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{graphicx}
+n\usepackage{graphicx}
 \onecolumn
-
 
 \title{Rapid and simultaneous estimation of fault slip and
   heterogeneous lithospheric viscosity from postseismic deformation}
@@ -81,7 +80,8 @@ undergoing quasi-static deformation).  Creep will also initiate
 immediately after the earthquake, where the initial viscous strain
 rate in each parcel of the lithosphere will be proportional to the
 fluidity ($\varphi=1/\eta$) in that parcel, and independent of the
-fluidity elsewhere.  Each parcel will continue to creep at
+fluidity elsewhere, as stress at this time is only controlled by the
+elastic properties.  Each parcel will continue to creep at
 approximately that rate for as long as the initial elastic stresses
 from the earthquake are large compared to the stresses transferred
 throughout the lithosphere by viscoelastic relaxation.  In this early
@@ -109,12 +109,11 @@ Laplace transform of deformation in a viscoelastic body has the same
 form as the Laplace transform of deformation in a elastic body with
 the same geometry and subjected to the same boundary conditions. The
 solution for displacements following an earthquake in a viscoelastic
-lithosphere can then be easily found provided that the solution for
-displacements in an elastic lithosphere with the same geometry is known
-\citep[e.g.][]{HH2005,NM1974,SP1978}.  One only needs to replace the
-shear modulus in the Laplace transform of the elastic solution with
-the effective viscoelastic shear modulus and then compute the inverse
-Laplace transform.
+lithosphere can then be easily found provided that the corresponding
+elastic solution is known \citep[e.g.][]{HH2005,NM1974,SP1978}.  One
+only needs to replace the shear modulus in the Laplace transform of
+the elastic solution with the effective viscoelastic shear modulus and
+then compute the inverse Laplace transform.
 
 \subsubsection{Two layered model}
 From the solution of \citet{R1971}, surface displacements,
@@ -127,7 +126,7 @@ layer overlying a semi-infinite elastic substrate are
 where
 \begin{equation}
   W(n) = \frac{1}{\pi}\left(\tan^{-1}\left(\frac{2nH + D}{x}\right) 
-    - \tan^{-1}\left(\frac{2nH - D}{x}\right)\right),
+    - \tan^{-1}\left(\frac{2nH - D}{x}\right)\right)
 \end{equation}
 and
 \begin{equation}
@@ -220,7 +219,7 @@ demonstrated by \citet{S2010} for an elastic layer over a Maxwell
 viscoelastic half-space.  The approximate solution coincides with the
 series expansion up until about 6 years after the earthquake.  At that
 point, the approximation begins to appreciably overestimate the series
-solution.  In our experience the approximate given by
+solution.  In our experience the approximation given by
 (\ref{TwoLayerViscousApprox}) is accurate for about as long as the
 relaxation time of the weakest layer, which is 10 years in this case.
 
@@ -278,15 +277,15 @@ u(x,t) \approx \frac{b(t)}{\pi}\tan^{-1}(\frac{D}{x}) +
                                     \frac{2x}{x^2 + \left(2\zeta - D\right)^2}\right)
                                     d\zeta d\theta.
 \end{equation}
-Although the above equation is capable of describing an arbitrary
-depth dependent viscosity structure, it falls short of being useful as
-the forward solution in an inverse problem aimed at estimating
-lithospheric viscosity.  This is because the above equation makes the
-unphysical assumption that the fault is infinitely long.  This would
-introduce first order errors, which would likely wash out the second
-order effect of viscosity. We use eq. (\ref{ContinuousViscousApprox})
-for making estimates of the depth sensitivity of postseismic
-deformation.
+Although the above equation is capable of describing surface
+deformation for an arbitrary depth dependent viscosity structure, it
+falls short of being useful as the forward solution in an inverse
+problem aimed at estimating lithospheric viscosity.  This is because
+the above equation makes the unphysical assumption that the fault is
+infinitely long.  This would introduce first order errors, which would
+likely wash out the second order effect of viscosity. We instead use
+eq. (\ref{ContinuousViscousApprox}) for making estimates of the depth
+sensitivity of postseismic deformation.
 
 \subsection{arbitrarily discretized earthquake models}
 Motivated by our above results, we make the assertion that the initial
@@ -719,8 +718,8 @@ lithosphere.
 \appendix
 \section{Inverse Laplace transorm through series expansion}
 
-let $f(t)$ be analytic and let there be a real valued $M$, and $C$
-that such that
+let $f(t):[0,\infty)\to\mathbb{R}$ be analytic and let there be a real valued $M$, and $C$
+such that
 \begin{equation}
   f^{(n)}(t) < Ce^{Mt}\quad \forall\ t\in[0,\infty).
 \end{equation}
