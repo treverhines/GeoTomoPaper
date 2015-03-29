@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+import numpy as np
+import ilt
+import elastic
+import matplotlib.pyplot as plt
+
+
+year2sec = 3.155e7
+nmax = 8
+mu1 = 3.2e10 #Pa
+mu2 = 3.2e10 #Pa
+mu3 = 3.2e10 #Pa
+eta1 = 1e18/year2sec #Pa year
+eta2 = 3.2e17/year2sec #Pa year
+eta3 = 1e17/year2sec #Pa year (this is only if using 3layer)
+tau1 = eta1/mu1 #years
+tau2 = eta2/mu2 #years
+tau3 = eta3/mu3 #years
+tau_min = min([tau1,tau2,tau3])
+
+D = 10.0 #km
+H = 10.0 #km
+H2 = 10.0 #km (thickness of middle layer if using 3layer)
+x1 = np.array([1.0,2.0,4.0,8.0])*D # km
+x2 = np.linspace(0.01,8.0,100)*D# km
+t1 = np.linspace(0,2*tau_min,100) # years
+t2 = np.array([0.0,0.5,1.0,1.5])*tau_min # years
+s_min = 1e6
+
+def uhat_elastic(s,x):
+  mu1hat = s/((s/mu1) + (1/eta1))
+  mu2hat = s/((s/mu2) + (1/eta2))
+  mu3hat = s/((s/mu3) + (1/eta3))
+  bhat = 1/s
+  #return elastic.two_layer(x,D,bhat,mu1hat,mu2hat,H,nmax)
+  return elastic.three_layer(x,D,bhat,mu1hat,mu2hat,mu3hat,H,H2,nmax)
+
+#def uhat_elastic(s,x):
+#
+#  gamma = (mu1hat-mu2hat)/(mu1hat+mu2hat)
+#  W = lambda n: 1/(np.pi)*(np.arctan((D + 2*n*H)/x) + np.arctan((D - 2*n*H)/x))
+#  out = bhat*(0.5*W(0) + sum(gamma**n*W(n) for n in range(1,nmax+1)))
+#  return out
+
+u = ilt.ILT(uhat_elastic,nmax,f_args=(x2,),s_min=s_min)
+plt.figure(1)
+plt.plot(x2/D,u(t2),'b',lw=2)
+
+u = ilt.ILT(uhat_elastic,nmax,f_args=(x1,),s_min=s_min)
+plt.figure(2)
+[plt.plot(t1/tau_min,u(t1)[i],'b',lw=2) for i in range(len(x1))]
+
+u = ilt.ILT(uhat_elastic,2,f_args=(x2,),s_min=s_min)
+plt.figure(1)
+plt.plot(x2/D,u(t2),'k--',lw=2)
+
+u = ilt.ILT(uhat_elastic,2,f_args=(x1,),s_min=s_min)
+plt.figure(2)
+[plt.plot(t1/tau_min,u(t1)[i],'k--',lw=2) for i in range(len(x1))]
+
+plt.show()
+
