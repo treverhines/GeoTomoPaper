@@ -14,8 +14,8 @@ year2sec = 3.155e7 # sec/year
 ## model parameters
 mu1 = 3.2e10 # shear modulus of top layer (Pa)
 mu2 = 3.2e10 # shear modulus of substrate (Pa)
-eta1 = 1e19 # viscosity of top layer (Pa s)
-eta2 = 1e18 # viscosity of substrate (Pa s)
+eta1 = 1e18 # viscosity of top layer (Pa s)
+eta2 = 1e19 # viscosity of substrate (Pa s)
 tau1 = eta1/mu1 # relaxation time of top layer (s)
 tau2 = eta2/mu2 # relaxation time of substrate (s)
 D = 10.0 # locking depth (km)
