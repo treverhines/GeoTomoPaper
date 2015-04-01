@@ -648,6 +648,9 @@ divergence for the near field sites is consistent with the comparison
 we made between the approximate and true displacements for a
 two-dimensional, two layered earthquake model in section 3.1.1.
 
+we include circles with radius 1 mm centered at each station to illiustrate
+how large the error is with respect to the data noise 
+
 The accuracy of eq. (\ref{Postseismic_Approximation}) is also
 demonstrated in figure 5, which shows $\mitbf{u}(t)$ and
 $\mitbf{u}(t)_{\mathrm{true}}$ at a sample site near the fault.  The
@@ -711,23 +714,33 @@ deformation (figures 4 and 5).  This is qualitatively similar to
 postseismic deformation following other large ($\geq$ Mw7) earthquakes
 \citep[e.g.][]{E2009}.  Some researchers have proposed using
 lithospheric rheologies other than Maxwell viscoelasticity to explain
-this behavior \citep[e.g.][]{HH2005,P2005,P2003,F2006b}. We suggest
-alternatively that fault creep and a relatively high viscosity Maxwell
-viscoelastic lithosphere could also describe postseismic transient
-deformation.  
-
-Although, our inverse method assumes that the lithosphere is Maxwell
-viscoelastic on the timescales of postseismic deformationl, we do not
-preclude the possibility of a stress-nonlinear rheology \citep[e.g.][]{HK2003}.
-the approximation given by eq. (\ref{Postseismic_Approximation})
-assumes that stresses in the lithosphere are not significantly
-different from the stresses induced from fault slip.  Under the
-assumption of constant stress, a material with a nonlinear rheology
-will behave as a Maxwell viscoelastic material and it will have an
-effective Maxwell viscosity.  This means that viscosities inferred
-using the above inverse method can be instead interpretted as the
-effective Maxwell viscosities for the current state of stress in the
-lithosphere.
+this behavior.  For example, \citet{P2005} invoked a
+Burgers rheology in the upper Mantle to explain the postseismic
+deformation following the 2002 Denali earthquake, where a low viscosity kevlin
+element was needed to explain the rapid early postseismic and a higher
+Maxwell viscosity was needed to explain the steady rate of deformation
+from time X onward.  Transient deformation following the Denali earthquake has also been explain with
+a stress nonlinear rheology \citep{F2006b}.  In this case the high
+stresses from the earthquake causes the effective netwonian viscosity
+to decrease producing a high rate of early deformation.  As the
+stresses relax, the effective viscosity increases and the rate of
+deformation decreases and becomes steadier over time.  In this case
+the. Our method does not necessarily preclude either a Burgers
+rheology or a nonlinear viscosity, As long as stresses in the
+lithosphere remain roughly equal to the the stresses transferred
+elastically through fault slip then our method could infer an
+effective maxwell viscosity for either rheology.  To put another way,
+as long as the rate of surface deformation resulting from viscous
+relaxation is roughly constant over the time interval which we are
+observing, then our method can be used to infer an effective
+viscosity. If the transient postseismic deformation truly is the
+result of rheologic properties of the lithosphere than this mean our
+method could be used for a time interval of a few months during the
+rapid initial postseismic period. However, if the transient nature of
+postseismic deformation is the result of afterslip as described by Johnson 2008
+and the steady later period is the result viscous relaxation, then our
+method could potentially be used to describe the postseismic
+deformation several years after the Denali earthquake.
 
 \section{Conclusion}
 
