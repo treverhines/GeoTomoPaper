@@ -238,22 +238,28 @@ deformation resulting from slip on a strike-slip fault in a three
 layered viscoelastic half-space.  Starting from the layered elastic
 solution from \citet{CJ1972}, we evalutate the solution for the
 viscoelastic problem in our supplementary ipython notebook. Once
-again, we find that the initial viscoelastic response is linear with
-respect to the fluidity in each of the three layers and we can approximate
-early postseismic deformation resulting from slip described by $b(t)$
-as
-\begin{equation}\label{ThreeLayerViscousApprox}
-u_v(x,t) \approx b(t)\frac{1}{2} W(0,0) + 
-         \int_0^tb(\theta)\left(\frac{\mu}{2\eta_3}W(1,1)
-                               +\frac{\mu}{2\eta_2}(W(0,1) - W(1,1))
-                               -\frac{\mu}{2\eta_1}W(0,1)\right)d\theta,
+again, we find that the initial viscoelastic response to a unit of
+slip, given by
+\begin{equation}\label{ThreeLayerViscousResponse}
+\frac{\partial}{\partial t}u_v(x,t) = \frac{\mu}{2\eta_3}W(1,1)
+                                      +\frac{\mu}{2\eta_2}(W(0,1) - W(1,1))
+                                      -\frac{\mu}{2\eta_1}W(0,1),
 \end{equation}
 where
 \begin{equation}
   W(n,m) = \frac{1}{\pi}\left(\tan^{-1}\left(\frac{2nH_2 + 2mH_1 + D}{x}\right) - 
                               \tan^{-1}\left(\frac{2nH_2 + 2mH_1 - D}{x}\right)\right),
 \end{equation}
-$\eta_1$, $\eta_2$, and $\eta_3$ are the viscosities of the top,
+is linear with respect to the fluidity in each of the three layers.
+We can approximate early postseismic deformation resulting from slip
+described by $b(t)$ in the same manner as in section 2.1.1 as
+\begin{equation}\label{ThreeLayerViscousApprox}
+u_v(x,t) \approx b(t)\frac{1}{2} W(0,0) + 
+         \int_0^tb(\theta)\left(\frac{\mu}{2\eta_3}W(1,1)
+                               +\frac{\mu}{2\eta_2}(W(0,1) - W(1,1))
+                               -\frac{\mu}{2\eta_1}W(0,1)\right)d\theta,
+\end{equation}
+where $\eta_1$, $\eta_2$, and $\eta_3$ are the viscosities of the top,
 middle, and bottom layers, respectively, and $H_1$ and $H_2$ are the
 thicknesses of the top and middle layer, respectively.  We can see
 that eq. (\ref{ThreeLayerViscousApprox}) recovers eq.
@@ -388,43 +394,55 @@ subject to the constraint that
   \mitbf{m}\geq0,
 \end{equation}
 where 
-\begin{equation}
+\begin{equation}\label{ResidualFunction}
   \mitbf{f(m)} = 
     \begin{vmatrix}
       \mitbf{W}\left(\mitbf{u(m)}-\mitbf{u}_{\mathrm{obs}}\right)\\
-      \mitbf{Lm}\\
+      \lambda_s\mitbf{L_sm}\\
+      \lambda_v\mitbf{L_vm}\\
     \end{vmatrix} .
 \end{equation}  
 In the above equation, $\mitbf{W}$ is a diagonal matrix containing the
 reciprocal of the data uncertainties
 (i.e. $\mitbf{W}^T\mitbf{W}=\mitbf{C_d}^{-1}$ where $\mitbf{C_d}$ is
-the data covariance matrix), and $\mitbf{L}$ is a regularization matrix.
+the data covariance matrix), and $\mitbf{L_s}$ and $\mitbf{L_v}$ are
+regularization matrices.
 
 We impose a nonnegativity constraint on $\mitbf{m}$ which ensures that
 inferred slip is in one predominant direction and that viscosities are
-postive.  Specifically, the rake of the inferred slip on each fault
+positive.  Specifically, the rake of the inferred slip on each fault
 patch is to be within a $90^\circ$ window defined by the rakes of
 chosen orthogonal basis slip directions. For instance, the basis slip
 directions could be chosen such that only slip rakes within $45^\circ$
 of pure strike-slip, normal, or thrust are permisible.
 
 Because this inverse problem inevitably has nonunique solutions for
-$\mitbf{m}$, we put additional constraints on the model parameters with
-the matrix $\mitbf{L}$.  In our following synthetic tests, we constrain
-the solution by minimizing the Laplacian of the spatial distribution
-of fault slip and lithospheric viscosity.  We do so by letting
-$\mitbf{L}$ be the umbrella operator \citep{D1999} such that
+$\mitbf{m}$, we put additional constraints on the inferred slip and
+inferred viscosity with the matrices $\mitbf{L_s}$ and $\mitbf{L_v}$,
+respectively.  In our following synthetic tests, we constrain the
+solution by minimizing the Laplacian of the spatial distribution of
+fault slip and lithospheric viscosity.  We do so by letting
+$\mitbf{L_s}$ and $\mitbf{L_v}$ be umbrella operators \citep{D1999}
+such that they can be stacked on top of eachother into the matrix $L_{ij}$,
+which satisfies
 \begin{equation}
-  \sum_j^{Q}L_{ij}m_j = \frac{\lambda_i}{|\mathcal{N}(i)|}\sum_{k\in \mathcal{N}(i)} m_k - m_i,
+  \sum_j^{Q}L_{ij}m_j = \frac{1}{|\mathcal{N}(i)|}\sum_{k\in \mathcal{N}(i)} m_k - m_i.
 \end{equation}
-where $\mathcal{N}(i)$ denotes the set of indices for model parameters
-describing slip (viscosity) which is adjacent to the slip (viscosity)
-described by $m_i$ and $|\mathcal{N}(i)|$ is the length of that
-set. $\lambda_i$ is a penalty parameter which controls how much we
-enforce the smoothness constraint.  The subscript in $\lambda_i$ is
-included because we find a seperate penalty parameter for coseismic
-slip, afterlip, and viscosity model pararameters.  The optimal penalty
-parameters are chosen using 10-fold cross validation.
+In the above equation $\mathcal{N}(i)$ denotes the set of indices for
+model parameters describing slip (viscosity) which is adjacent to the
+slip (viscosity) described by $m_i$ and $|\mathcal{N}(i)|$ is the
+length of that set.
+
+The parameters $\lambda_v$ and $\lambda_s$ in eq. (23) control how
+much we enforce the smoothness constraint.  We choose these parameters
+using L-curves, which describe the trade off between the model
+smoothness and data misfit (figure 6).  We first set $\lambda_v=0$ and
+then use an L-curve to pick $\lambda_s=0$, then we fix $\lambda_s$ at
+our chosen value and use another L-curve to pick $\lambda_v$.  We have
+attempted to choose our model parameters through cross-validation but
+we found that the optimal pair of penalty parameters picked through
+cross-validation tended to significantly degrade our fit to the most
+near-field stations.
 
 We find $\mitbf{m}$ that satisfies the above conditions using the
 Gauss-Newton method \citep[e.g.][]{A2013}.  The best fit model parameters are
@@ -552,27 +570,24 @@ synthetic model, can be describe with continued fault slip.
 \subsection{Recovered model}
 
 Our best fitting model of slip on the fault is shown in Figure 2.  The
-spatial distribution, direction, and magnitude of our inferred
-coseismic slip is a good match to the synthetic coseismic slip.  This
-is not surprising given that the magnitude of coseismic displacments
-is far larger than the magnitude of the added noise. 
-
-The surface displacements over the intervals $0.0<t<0.5$ years and
-$0.5<t<1.0$ years are an order of magnitude smaller than the coseismic
-displacements and so the postseismic signal is more obscured by the added
-noise.  Consequently, we are not able to accurately recover the
-spatial distribution of afterslip on the fault over these time
-intervals.  However, the seismic moment of inferred afterslip is
-consistent with the seismic moment in the synthetic model meaning that
-the total amount of afterlip is well recovered but is largely smoothed
-out over the fault plane by the regularization.  Our recovered model
-is therefore accurately attributing deformation during this time
-interval to afterslip rather than viscous deformation. We note that
-lowering the penalty parameter for afterlip would result in a spatial
-distribution of afterslip that is more consistent with the afterslip
-in the synthetic model and it is possible that our recovered afterslip
-would be better recovered using a method other than 10-fold cross
-validation to find our penalty parameters.
+spatial distribution and direction of inferred the coseismic slip are
+a good match to the synthetic coseismic slip.  The distribution of
+afterslip was decently recovered but not as well as for the coseismic
+slip.  There are a few artifacts in the distribution of afterlsip
+which are not present in the synthetic model, such as slip on the
+north-most and deepest section of the fault.  We attribute these
+artifacts to data noise.  The distribution of afterslip is more
+diffuse than in the synthetic model, which is a result of our
+regularization scheme.  The inability to recover the details of the
+imposed afterslip could be because the data noise is obscuring some of
+the postseismic signal or possibly because the imposed afterslip is
+deeper than the coseismic slip and thus more difficult to accurately
+recover.  Nevertheless, the inferred moment of both coseismic slip and
+afterslip, which is proportional to slip integrated over the fault
+plane, is in good agreement with the moment in the synthetic model.
+Although the spatial distribution of inferred slip may be more
+difficult to recover, the cumulative slip seems to be consistently
+recovered with ease.
 
 The inferred slip over the last time interval, 1.0 to 10.0 years
 following the earthquake, is also consistent with the synthetic model.
@@ -581,7 +596,8 @@ which is two orders of magnitude smaller than the moment for the
 coseismic slip.  This means that the inferred slip is accounting for,
 at most, a few mm's of displacement from $t=1.0$ to $t=10.0$ years.
 This is on order of the data uncertainty and so the inferred slip is
-negligably small.
+negligably small.  The surface deformation during this time interval
+is therefor being properly attributed to viscoelastic relaxation.
 
 The inferred viscosities in each of the eight layers are shown in
 figure 3a.  The recovered viscosities correspond well with the
@@ -606,7 +622,7 @@ as is perhaps more intuitive.
 %structure than that shown would also be able to adequately describe the
 %synthetic data.
 
-\subsection{solution validation}
+\subsubsection{Validation}
 The fact that our recovered fault slip and lithospheric viscosity are
 in good agreement with the synthetic model suggests that the
 approximation given by eq. (\ref{Postseismic_Approximation}) is
@@ -687,6 +703,8 @@ numerically rather that with eq. (\ref{Postseismic_Approximation}). In
 such case, the initial guess for the model parameters should be the
 estimate of slip and viscosity made using the truncated time series.
 
+Talk about how inferred viscosity would change if the time series length is too long
+
 Our synthetic data is characterized by transient near field surface
 deformation followed by a steady rate of more diffuse surface
 deformation (figures 4 and 5).  This is qualitatively similar to
@@ -740,12 +758,12 @@ Substituting eq. (\ref{Property1}) into eq. (\ref{Property2}) and then
 rearranging the terms gives us a recursive formula for $f^{(n)}(0)$ in
 terms of $\hat{f}(s)$:
 \begin{equation}\label{NthDeriv}
-  f^{(n)}(0) = 
-  \begin{cases}
-    \lim_{s \to \infty} s\hat{f}(s)& \text{if } n=0\\
-    \lim_{s \to \infty} s^{n + 1}\hat{f}(s) - 
-                     \sum_{m=0}^{n-1} s^{m+1}f^{(n-m-1)}(0)& \text{if } n > 0.
-  \end{cases}
+  f^{(n)}(0) = \lim_{s \to \infty} s^{n + 1}\hat{f}(s) -
+               \sum_{m=1}^{n} s^{m}f^{(n-m)}(0),
+\end{equation}
+where the base case, $n=0$, is the initial value theorem:
+\begin{equation}\label{NthDerivBase}
+  f(0) = \lim_{s \to \infty} s\hat{f}(s).
 \end{equation}
 Since we request $f(t)$ to be analytic at $t=0$, we can construct a
 Taylor series expansion of $f(t)$ such that
@@ -754,37 +772,48 @@ Taylor series expansion of $f(t)$ such that
 \end{equation}
 where $D$ is some neighborhood of $t=0$. We find the inverse Laplace
 transform of $\hat{f}(s)$ for $t\in D$ by combining
-eq. (\ref{TaylorSeries}) with eq. (\ref{NthDeriv}) so that $f(t)$ is
+eq. (\ref{TaylorSeries}) with eqs. (\ref{NthDeriv}) and (\ref{NthDerivBase}) so that $f(t)$ is
 expressed in terms of $\hat{f}(s)$.
 
-\section{Postseismic approximation for an arbitrary depth dependent viscosity}
+\section{Postseismic approximation for a two-dimensional earthquake model with an arbitrary depth dependent viscosity}
 We seek to find an approximation for early postseismic deformation in
-a two-dimensional halfspace with an arbitrary depth-dependent
-viscosity.  From eq. (\ref{PostseismicInitialVelocity}) we know that
-there exists some depth-dependent kernel, $K(x,z)$, such that the initial rate of surface
-deformation following a unit of slip is 
-\begin{equation}\label{step0}
-  \frac{\partial}{\partial t}u(x,t)\big|_{t=0} = \int_0^\infty \frac{1}{\eta(z)}K(x,z) dz,
+a two-dimensional, strike-slip earthquake model with an arbitrary
+depth-dependent viscosity below the fault locking depth, $D$.  We
+first find the initial rate of surface deformation following a unit of
+slip in a lithosphere that is elastic except for a viscoelastic layer
+which is at depth $z$ and with thickness $\Delta z$. This is found by
+making the substitions $H_1 \to z$, $H_2 \to \Delta z$, $\eta_1 \to
+\infty$, $\eta_3 \to \infty$, and $\eta_2 \to \eta$ in
+eq. (\ref{ThreeLayerViscousResponse}), which gives us
+\begin{equation}
+  \frac{\partial}{\partial t}u_1(x,t)\big|_{t=0} = 
+  \frac{1}{\eta}(W(z+\Delta z) - W(z)),
 \end{equation}
-where $z$ is positive with depth and zero at the surface.  In order to
-find $K(x,z)$, we use eq. (\ref{TwoLayerViscous}) to obtain the initial
-rate of surface deformation for a halfspace consisting of an elastic layer extending to
-depth $H$ and a viscoelastic substrate with viscosity $\eta$:
-\begin{align}\label{step1}
-  \frac{\partial}{\partial t}u_1(x,t)\big|_{t=0} 
-    &= \frac{\mu}{2\pi\eta}\left(\tan^{-1}\left(\frac{2H + D}{x}\right) - 
-                                 \tan^{-1}\left(\frac{2H - D}{x}\right)\right)\\
-    &= \int_H^\infty \frac{1}{\eta}K(x,z) dz.  
+where
+\begin{equation}
+  W(z) = \frac{\mu}{2\pi}\left(\tan^{-1}\left(\frac{2z-D}{x}\right) -
+  \tan^{-1}\left(\frac{2z+D}{x}\right)\right).
+\end{equation}
+From eq. (\ref{PostseismicInitialVelocity}) we know that the initial
+rate of surface deformation for a lithosphere composed of $N$ discrete
+layers, each with viscosity $\eta_i$, at depth $z_i$, and having
+thickness $\Delta z$, is then
+\begin{equation}
+  \frac{\partial}{\partial t}u_N(x,t)\big|_{t=0} = \sum_i^N
+  \frac{1}{\eta_i}(W(z_i + \Delta z) - W(z_i)).
+\end{equation}
+The initial rate of surface deformation for a viscosity structure
+given by $\eta(z)$ is found by taking the limit as $\Delta z \to 0$
+and $N \to \infty$:
+\begin{align}\label{ArbitraryViscousResponse}
+ \frac{\partial}{\partial t}u(x,t)\big|_{t=0} &= \int_D^\infty
+ \frac{1}{\eta(z)}\frac{\partial}{\partial z} W(z) dz\\
+ &= \int_D^{\infty}\frac{\mu}{2\pi\eta(z)}\left(\frac{2x}{x^2 + \left(D + 2z\right)^2} -
+                     \frac{2x}{x^2 + \left(2z - D\right)^2}\right) dz.
 \end{align}
-We find $K(x,z)$ which satisfies the above equation to be
-\begin{equation}\label{kernel}
-  K(x,z) = \frac{2x}{x^2 + \left(D + 2z\right)^2} -
-           \frac{2x}{x^2 + \left(2z - D\right)^2}.
-\end{equation}
-We use \ref{kernel} in \ref{step0} to obtain the initial viscoelastic
-response for a lithosphere with an arbitary depth-dependent viscosity
-below $D$ and then add the initial elastic displacements to obtain an
-approximation for early postseismic deformation:
+Finally, we add the elastic component of deformation and integrate
+eq. (B.5) with the fault slip history to obtain
+an approximation for early postseismic deformation:
 \begin{equation}
 u(x,t) \approx \frac{b(t)}{\pi}\tan^{-1}(\frac{D}{x}) + 
                \int_o^t\int_D^\infty \frac{\mu b(\theta)}{2\pi\eta(z)}
@@ -1010,12 +1039,10 @@ u(x,t) \approx \frac{b(t)}{\pi}\tan^{-1}(\frac{D}{x}) +
 \begin{figure}[h!]\label{figure2}
   \centering
   \includegraphics[width=0.9\textwidth]{FinalFigures/Figure2.pdf}
-  \caption{Left: slip distribution imposed in the synthetic model.
-    The panels from top to bottom represent coseismic slip at time =
-    0.0, and afterslip over the period 0.0 to 0.5 years, 0.5 to 1.0
-    years, and 1.0 to 10.0 years.  Colors indicate magnitude of slip
-    and arrows indicate direction of slip.  Right: Slip recovered from
-    inverting the synthetic surface deformation.}
+  \caption{Left: slip distribution imposed in the synthetic model and
+    slip recovered from the inversion. Colors indicate magnitude of
+    slip and arrows indicate direction of slip (right is left lateral
+    and up is thrust)}
   \label{figure 2}
 \end{figure}
 
@@ -1059,16 +1086,18 @@ u(x,t) \approx \frac{b(t)}{\pi}\tan^{-1}(\frac{D}{x}) +
   \label{figure 5}
 \end{figure}
 
-%\begin{figure}[h!]\label{figure6}
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure6.pdf}
-%  \caption{Predictive error for various pairs of slip and viscosity
-%    penalty parameters.  Values are interpolated from the predictive
-%    errors computed at each of the black dots.  The optimal pair of
-%    penalty parameters produce the minimum predictive error and are
-%    indicated by the star.}
-%  \label{figure 6}
-%\end{figure}
+\begin{figure}[h!]\label{figure6}
+  \centering
+  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure6.pdf}
+  \caption{L-curves used to select the penalty parameters. Panel A
+    shows the trade off between slip smoothness and data misfit while
+    varying $\lambda_s$ and keeping $\lambda_v$ fixed at zero.  Panel
+    B shows tade off between smoothness of inferred viscosity and
+    misfit while varying $\lambda_v$ and keeping $\lambda_s$ fixed at
+    the value chosen from Panal A.  Stars indicate our chosen penalty
+    parameters.}
+  \label{figure 6}
+\end{figure}
 
 \begin{figure}[h!]\label{figure6}
   \centering
