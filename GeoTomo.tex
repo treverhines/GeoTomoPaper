@@ -701,27 +701,40 @@ appropriate.  One can reduce the length of the postseismic time series
 used in the inversion until an adequate fit is found.
 
 %Talk about how inferred viscosity would change if the time series length is too long
+our synthetic data is, by design, characterized by transient rapid
+postseismic deformation in the first year after the earthquake,
+resulting from afterslip, followed by steady deformation in the later
+years, resulting from viscoelastic creep.  Surface deformation
+following large ($\geq Mw=7$) earthquakes often is characterized by a
+similar temporal evolution \citep[e.g.][]{SS1997,S2005,E2009,R2015},
+and has also been described with a combination of afterslip and
+relaxation in a Maxwell viscoelastic lithosphere
+\citep[e.g.][]{PA2005,J2009}. Indeed, \citet{PA2005} descibed
+postseismic deformation following the 2001 Mw=8.4 Peru earthquake by
+assuming that the rate of deformation resulting from viscoelastic
+relaxation was constant over their two year long time series, which is
+the assumption that we make in our approximation for postseimic
+deformation, although in our formulation in
+eq. (\ref{Postseismic_Approximation}) we allow the rate of deformation
+to scale with the fault slip history over the postseismic period.
+This is suggestive that our approximation for early postseismic
+deformation is appropriate on postseismic timescales.
 
-postseismic deformation following large ($\geq Mw=7$) earthquakes
-often is characterized by rapid early transience which decays to a
-steady rate after a matter of months
-\citep[e.g.][]{SS1997,S2005,E2009,R2015}.  This pattern (better word?)
-of surface deformation is difficult to recreate soley with creep in a
-Maxwell viscoelastic lithosphere.  Several studies have explored other
-lithospheric rheologies to explain observed transient postseismic
-deformation.  For example, \citet{P2003,P2005} invoked a Burgers
-rheology upper mantle to explain surface displacements following the
-2002 $Mw=7.9$ Denali earthquake and the 1999 $Mw7.1$ Hector Mine earthquake.
-In both cases the best fitting transient relaxation time was on the
-order of a month and the best fitting steady state relaxation time was
-on the order of years.  Postseismic deformation following the Denali
-earthquake was also successfully modeled by \citet{F2006b} with a
-power-law rheology in the upper mantle, consistent with laboratory
-studies \citep[e.g.][]{KK1987}.  The power-law rheology was able to
-reproduce the observed transient surface deformation because the high
-stresses in the earthquake decreased the effective viscosity of the
-upper mantle to $~10^{17}$ Pa s resulting in fast surface deformation.
-As stresses from the earthquake relaxed, the effective viscosity
+Several studies have explored other lithospheric rheologies to explain
+observed transient postseismic deformation.  For example,
+\citet{P2003,P2005} invoked a Burgers rheology upper mantle to explain
+surface displacements following the 2002 $Mw=7.9$ Denali earthquake
+and the 1999 $Mw7.1$ Hector Mine earthquake.  In both cases the best
+fitting transient relaxation time was on the order of a month and the
+best fitting steady state relaxation time was on the order of years.
+Postseismic deformation following the Denali earthquake was also
+successfully modeled by \citet{F2006b} with a power-law rheology in
+the upper mantle, consistent with laboratory studies
+\citep[e.g.][]{KK1987}.  The power-law rheology was able to reproduce
+the observed transient surface deformation because the high stresses
+in the earthquake decreased the effective viscosity of the upper
+mantle to $~10^{17}$ Pa s resulting in fast surface deformation.  As
+stresses from the earthquake relaxed, the effective viscosity
 increased and the predicted surface deformation became steadier.
 
 Based on the success of \citet{P2003,P2005} and \citet{F2006b}, one
@@ -751,18 +764,6 @@ numerically rather that with eq. (\ref{Postseismic_Approximation}). In
 such case, the initial guess for the model parameters would be the
 estimate of slip and viscosity made using the truncated time series.
 
-The characteristic temporal evolution of postseismic deformation has
-also been described with a combination afterslip and relaxation in a
-Maxwell viscoelastic lithosphere \citep[e.g.][]{PA2005,J2009}.  In
-such models, the rapid early transient deformation is controlled by
-fault slip, while the later steady postseismic deformation is
-controlled by viscous relaxation in a relatively strong lithosphere
-(relaxation time of years the decades).  Indeed, our synthetic data is
-characterized by transient near field surface deformation, caused by
-fault slip, followed by a steady rate of more diffuse surface
-deformation, resulting from viscous creep (figures 4 and 5).  In such
-case our method could be applicable over a postseismic time series
-extending from the time of the earthquake out to years or decades.
 
 %talk about time stepping this algorithm?
 
