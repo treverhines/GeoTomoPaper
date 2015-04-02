@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.9)  1 APR 2015 14:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.21)  2 APR 2015 03:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -277,12 +277,12 @@ Overfull \hbox (80.32184pt too wide) has occurred while \output is active
 eous lithospheric viscosity from postseismic deformation \OT1/ptm/m/n/12 7
  []
 
-[7]
+[7] [8]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [8]
-Underfull \hbox (badness 6236) in paragraph at lines 904--908
+
+Underfull \hbox (badness 6236) in paragraph at lines 929--933
 []\OT1/ptm/m/n/8 Freed, A.M., 2007. Af-ter-slip (and only af-ter-slip) fol-low-
 ing the 2004 Park-field, Cal-i-for-nia, earth-quake, \OT1/ptm/m/it/8 Geo-phys. 
 Res. Lett.\OT1/ptm/m/n/8 , 34, 1-5.
@@ -295,14 +295,14 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 5105) in paragraph at lines 992--996
+Underfull \hbox (badness 5105) in paragraph at lines 1028--1032
 []\OT1/ptm/m/n/8 Pollitz, F.F., 1997. Grav-i-ta-tional vis-coelas-tic post-seis
 -mic re-lax-ation on a lay-ered spher-i-cal Earth. \OT1/ptm/m/it/8 J. Geo-phys.
  Res.\OT1/ptm/m/n/8 , 102, 17921-17941.
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 997--1001
+Underfull \hbox (badness 1354) in paragraph at lines 1033--1037
 []\OT1/ptm/m/n/8 Pollitz, F.F., 2003. Tran-sient rhe-ol-ogy of the up-per-most 
 man-tle be-neath the Mo-jave Desert, Cal-i-for-nia, \OT1/ptm/m/it/8 Earth Plane
 t Sci. Lett.\OT1/ptm/m/n/8 , 215, 89-104.
@@ -318,49 +318,49 @@ Missing character: There is no “ in font ptmr7t!
 File: FinalFigures/Figure1.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure1.pdf>
-Package pdftex.def Info: FinalFigures/Figure1.pdf used on input line 1043.
+Package pdftex.def Info: FinalFigures/Figure1.pdf used on input line 1090.
 (pdftex.def)             Requested size: 403.20154pt x 311.95056pt.
 
 <FinalFigures/Figure2.pdf, id=46, 1119.3871pt x 370.15526pt>
 File: FinalFigures/Figure2.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure2.pdf>
-Package pdftex.def Info: FinalFigures/Figure2.pdf used on input line 1054.
+Package pdftex.def Info: FinalFigures/Figure2.pdf used on input line 1101.
 (pdftex.def)             Requested size: 453.59692pt x 149.99112pt.
 
 <FinalFigures/Figure3.pdf, id=47, 615.45828pt x 345.02948pt>
 File: FinalFigures/Figure3.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure3.pdf>
-Package pdftex.def Info: FinalFigures/Figure3.pdf used on input line 1064.
+Package pdftex.def Info: FinalFigures/Figure3.pdf used on input line 1111.
 (pdftex.def)             Requested size: 453.59692pt x 254.29645pt.
 
 <FinalFigures/Figure4.pdf, id=48, 727.65994pt x 895.54153pt>
 File: FinalFigures/Figure4.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure4.pdf>
-Package pdftex.def Info: FinalFigures/Figure4.pdf used on input line 1078.
+Package pdftex.def Info: FinalFigures/Figure4.pdf used on input line 1125.
 (pdftex.def)             Requested size: 453.59692pt x 558.23628pt.
 
 <FinalFigures/Figure5.pdf, id=49, 555.22421pt x 416.18002pt>
 File: FinalFigures/Figure5.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure5.pdf>
-Package pdftex.def Info: FinalFigures/Figure5.pdf used on input line 1091.
+Package pdftex.def Info: FinalFigures/Figure5.pdf used on input line 1138.
 (pdftex.def)             Requested size: 453.59692pt x 339.99974pt.
 
 <FinalFigures/Figure6.pdf, id=50, 1003.35828pt x 405.02461pt>
 File: FinalFigures/Figure6.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure6.pdf>
-Package pdftex.def Info: FinalFigures/Figure6.pdf used on input line 1104.
+Package pdftex.def Info: FinalFigures/Figure6.pdf used on input line 1151.
 (pdftex.def)             Requested size: 453.59692pt x 183.09988pt.
 
 <FinalFigures/Figure7.pdf, id=51, 727.90425pt x 447.02283pt>
 File: FinalFigures/Figure7.pdf Graphic file (type pdf)
 
 <use FinalFigures/Figure7.pdf>
-Package pdftex.def Info: FinalFigures/Figure7.pdf used on input line 1117.
+Package pdftex.def Info: FinalFigures/Figure7.pdf used on input line 1164.
 (pdftex.def)             Requested size: 453.59692pt x 278.57005pt.
 
 Overfull \hbox (80.32184pt too wide) has occurred while \output is active
@@ -397,13 +397,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2910 strings out of 495028
- 36843 string characters out of 6181498
- 104597 words of memory out of 5000000
- 6056 multiletter control sequences out of 15000+600000
- 34215 words of font info for 81 fonts, out of 8000000 for 9000
+ 2916 strings out of 495028
+ 36897 string characters out of 6181497
+ 108664 words of memory out of 5000000
+ 6061 multiletter control sequences out of 15000+600000
+ 35800 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,12n,26p,582b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,26p,582b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-
@@ -422,7 +422,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on GeoTomo.pdf (14 pages, 1172852 bytes).
+Output written on GeoTomo.pdf (14 pages, 1174474 bytes).
 PDF statistics:
  5046 PDF objects out of 5155 (max. 8388607)
  3348 compressed objects within 34 object streams
