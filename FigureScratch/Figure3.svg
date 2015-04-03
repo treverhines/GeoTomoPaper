@@ -16502,12 +16502,12 @@
      inkscape:window-width="1855"
      inkscape:window-height="1056"
      id="namedview116704"
-     showgrid="true"
+     showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="0.6180637"
+     inkscape:zoom="1.2361274"
      inkscape:cx="226.07167"
      inkscape:cy="160.27961"
      inkscape:window-x="65"
@@ -29943,4 +29943,28 @@
        style="fill:none;fill-rule:evenodd;stroke:#008000;stroke-width:1.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m -403.83477,-228.37386 27.45762,0 0,0.22881 0,0"
        id="path42158-5"
-       inkscape:connector-curvature="0" /></g></svg>
+       inkscape:connector-curvature="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-544.02063"
+       y="-7.8540735"
+       id="text27242"
+       sodipodi:linespacing="125%"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan27244"
+         x="-544.02063"
+         y="-7.8540735">A</tspan></text>
+<text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-6.4457793"
+       y="-6.4512277"
+       id="text27246"
+       sodipodi:linespacing="125%"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan27248"
+         x="-6.4457793"
+         y="-6.4512277">B</tspan></text>
+</g></svg>

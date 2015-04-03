@@ -19,7 +19,7 @@
    sodipodi:docname="Figure2.svg"><metadata
      id="metadata21864"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs21862"><clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath21874"><path
@@ -855,8 +855,8 @@
      showgrid="true"
      showguides="false"
      inkscape:zoom="1.28"
-     inkscape:cx="754.11593"
-     inkscape:cy="70.843535"
+     inkscape:cx="963.06147"
+     inkscape:cy="383.34353"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -2024,27 +2024,27 @@
 <text
        sodipodi:linespacing="125%"
        id="text42923"
-       y="29.402122"
-       x="24.999949"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       y="52.839622"
+       x="26.562449"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="29.402122"
-         x="24.999949"
+         y="52.839622"
+         x="26.562449"
          id="tspan42925"
          sodipodi:role="line"
-         style="font-size:17.5px">synthetic</tspan></text>
+         style="font-size:25px">synthetic</tspan></text>
 <text
        sodipodi:linespacing="125%"
        id="text42923-5"
-       y="29.885521"
-       x="568.32526"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       y="51.760521"
+       x="564.41901"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="29.885521"
-         x="568.32526"
+         y="51.760521"
+         x="564.41901"
          id="tspan42925-9"
          sodipodi:role="line"
-         style="font-size:17.5px">recovered</tspan></text>
+         style="font-size:25px">recovered</tspan></text>
 <g
        style="display:inline"
        id="g73086"
@@ -39634,24 +39634,24 @@
        style="fill:none;stroke:#000000;stroke-width:1.08524847;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        d="m 748.15503,438.59301 307.51237,0 0,-122.32544 -307.51237,0 0,122.32544 z" /><text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="745.40381"
-       y="28.826782"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="746.18506"
+       y="51.483032"
        id="text104129"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan104131"
-         x="745.40381"
-         y="28.826782">synthetic</tspan></text>
+         x="746.18506"
+         y="51.483032">synthetic</tspan></text>
 <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1314.4663"
-       y="31.014282"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1281.6538"
+       y="51.326782"
        id="text104133"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan104135"
-         x="1314.4663"
-         y="31.014282">recovered</tspan></text>
+         x="1281.6538"
+         y="51.326782">recovered</tspan></text>
 </g></svg>

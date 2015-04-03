@@ -346,9 +346,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="411.27765"
-     inkscape:cy="199.91148"
+     inkscape:zoom="1.4"
+     inkscape:cx="418.37598"
+     inkscape:cy="314.19719"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -360,7 +360,11 @@
      inkscape:window-height="1056"
      inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid77408" />
+  </sodipodi:namedview>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -4509,27 +4513,30 @@
          y="-919.30408">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-612.49921"
-       y="-921.23248"
-       id="text24855-0-7"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-594.30432"
+       y="-922.50922"
+       id="text77381"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan24857-4-2"
-         x="-612.49921"
-         y="-921.23248"
-         style="font-size:17.5px">approximation error at 10 years</tspan></text>
+         id="tspan77383"
+         x="-594.30432"
+         y="-922.50922">u<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan77412">true</tspan>(x,t) - u(x,t) at t=10 years</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-155.38081"
-       y="-922.37762"
-       id="text24859-6-4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-152.86629"
+       y="-923.18842"
+       id="text77381-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan24861-4-8"
-         x="-155.38081"
-         y="-922.37762"
-         style="font-size:17.5px">approximation error at 20 years</tspan></text>
+         id="tspan77383-1"
+         x="-152.86629"
+         y="-923.18842"
+         style="font-size:17.5px">u<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan77416">true</tspan>(x,t) - u(x,t) at t=20 years</tspan></text>
   </g>
 </svg>
