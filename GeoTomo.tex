@@ -72,30 +72,30 @@ $\mitbf{\varepsilon}$, are related by
   \frac{\partial\mitbf{\varepsilon}}{\partial t}=\frac{\mitbf{\sigma}}{2\eta} + 
                               \frac{1}{2\mu}\frac{\partial\mitbf{\sigma}}{\partial t}.
 \end{equation}
-$\eta$ and $\mu$ are viscosity and shear modulus, respectively.  This
-constitutive relationship implies that a sudden strain in the
-lithosphere from an earthquake will instantaneously propagate stresses
-through the lithosphere elastically (assuming the lithosphere is
-undergoing quasi-static deformation).  Creep will also initiate
-immediately after the earthquake, where the initial viscous strain
-rate in each parcel of the lithosphere will be proportional to the
-fluidity ($1/\eta$) in that parcel, and independent of the fluidity
-elsewhere because stress at this time is only controlled by the
-elastic properties of the lithosphere.  Stresses from the earthquake
-will dissipate over time through viscous deformation but while the
-stresses transferred throughout the lithosphere by viscous relaxation
-are small compared to the initial elastic stresses, each parcel will
-continue to creep at a rate that is approximately proportional to its
-fluidity.  In this early postseismic period, the surface deformation
-from creep in each parcel will have an amplitude that is also
-proportional to the fluidity in that parcel and independent of the
-fluidity elsewhere.  As we will show, the early surface expression of
-creep in the entire lithosphere is therefore a sum of the surface
-deformation from each parcel and is linear with respect to
-lithospheric fluidity.  We demonstrate this property of early
-postseismic surface deformation in this section using simple infinite
-length, strike-slip earthquake models, where the lithosphere is
-approximated as a layered halfspace. In section 2.2 we consider a
+We use $\eta$ and $\mu$ to represent viscosity and shear modulus,
+respectively.  This constitutive relationship implies that a sudden
+strain in the lithosphere from an earthquake will instantaneously
+propagate stresses through the lithosphere elastically (assuming the
+lithosphere is undergoing quasi-static deformation).  Viscoelastic
+creep will also initiate immediately after the earthquake, where the
+initial viscous strain rate in each parcel of the lithosphere will be
+proportional to the fluidity ($1/\eta$) in that parcel, and
+independent of the fluidity elsewhere because the initial stresses are
+only controlled by the elastic properties of the lithosphere.
+Stresses from the earthquake will dissipate over time through
+viscoelastic relaxation and while the stress changes from viscous
+relaxation are small compared to the initial elastic stresses, each
+parcel will continue to creep at a rate that is approximately
+proportional to its fluidity.  In this early postseismic period, the
+surface deformation from creep in each parcel will have an amplitude
+that is also proportional to the fluidity in that parcel and
+independent of the fluidity elsewhere.  As we will show, the early
+surface expression of creep in the entire lithosphere is therefore a
+sum of the surface deformation from each parcel and is linear with
+respect to lithospheric fluidity.  We demonstrate this property of
+early postseismic surface deformation in this section using simple
+infinite length, strike-slip earthquake models, where the lithosphere
+is approximated as a layered halfspace. In section 2.2 we consider a
 finite fault model with an arbitrarily discretized lithospheric
 viscosity structure.
 
@@ -229,10 +229,6 @@ material interface (i.e. when the weaker material is closer to the
 fault).  We also note that the approximation has more longevity for
 locations further away from the fault, where it starts to break down
 at about the minimum relaxation time in the lithosphere.
-
-
-
-
 
 \subsubsection{Three layered model}
 We follow the same procedure from above to find the surface
@@ -673,22 +669,22 @@ section 2.1.1 (Figure 1).
 
 The accuracy of eq. (\ref{Postseismic_Approximation}) is also
 demonstrated in Figure 6, which shows $\vec{u}(\vec{x},t)$ and
-$\vec{u}_{\mathrm{true}}(\vec{x},t)$ at a sample site near the fault.  The
-numerical solution asymptotically approaches the rate of deformation
-predicted by eq. (\ref{Postseismic_Approximation}) as time goes to
-zero, demonstrating that eq. (\ref{PostseismicInitialVelocity})
-accurately descibes the initial viscoelastic response.  Additionally,
-the magnitude of the difference between $\vec{u}(\vec{x},t)$ and
-$\vec{u}_{\mathrm{true}}(\vec{x},t)$ is smaller than the uncertainty on our
-synthetic data throughout the time series, indicating that the
-approximation given by eq. (\ref{Postseismic_Approximation}) is
-appropriate for this synthetic test.  For this site and other near
-field sites, the approximation starts to break down at about $t=10$
-years. The lowest relaxation time in our synthetic lithosphere is also
-about 10 years and so the duration over which
-eq. (\ref{Postseismic_Approximation}) is accurate is consistent with
-our analysis for a two-dimensional, two layered earthquake model in
-section 2.1.1.
+$\vec{u}_{\mathrm{true}}(\vec{x},t)$ at a sample site near the fault.
+The numerical solution asymptotically approaches the rate of
+deformation predicted by eq. (\ref{Postseismic_Approximation}) as time
+goes to zero, demonstrating that
+eq. (\ref{PostseismicInitialVelocity}) accurately descibes the initial
+viscoelastic response.  Additionally, the magnitude of the difference
+between $\vec{u}(\vec{x},t)$ and $\vec{u}_{\mathrm{true}}(\vec{x},t)$
+is smaller than the uncertainty on our synthetic data throughout the
+time series, indicating that the approximation given by
+eq. (\ref{Postseismic_Approximation}) is appropriate for this
+synthetic test.  For this site and other near field sites, the
+approximation starts to break down at about $t=10$ years. The lowest
+relaxation time in our synthetic lithosphere is also about 10 years
+and so the duration over which eq. (\ref{Postseismic_Approximation})
+is accurate is longer than what we found in our analysis for a
+two-dimensional, two layered earthquake model in section 2.1.1. 
 
 %Figure 7 also shows the root mean square error as
 %a function of time which we define as
@@ -747,14 +743,17 @@ viscoelastic creep, then eq. (\ref{Postseismic_Approximation}) should
 be appropriate on the timescale of years or decades after an
 earthquake.
 
-Additionally, transient postseismic deformation could be the result of
-creep in a ductile shear zone immediately below the coseismic rupture
-\citep[e.g.][]{HZ2014}, which can be modeled as slip on a downdip
-extension of the ruptured fault \citep[e.g.][]{H2002,KS2003,JS2004}.
-Likewise, \citet{F2006} noted that deep fault slip could serve as a
-proxy for distributed viscous relaxation in a weak lower crust.  It is
-then possible that our method of inferring fault slip and lithospheric
-viscosity could absorb localized viscous deformation as afterslip.
+Postseismic transient deformation could also be the result of creep in
+a weak ductile shear zone which is embedded in a stronger viscoelastic
+lithosphere \citep[e.g][]{HZ2014}. Sufficiently localized creep in a
+shear zone can be modeled as slip on a downdip extension of the
+ruptured fault \citep[e.g.][]{H2002,KS2003,JS2004} because the two
+processes are kinematically indistinguishable.  Likewise,
+\citet{F2006} noted that deep fault slip could serve as a proxy for
+distributed viscous relaxation in a weak lower crust. The
+applicability of our method should therefore be unaffected by
+localized viscous deformation with the understanding that inferrences
+of fault slip could be absorbing that deformation.
 
 Several studies have explored other lithospheric rheologies to explain
 observed transient postseismic deformation.  For example,
