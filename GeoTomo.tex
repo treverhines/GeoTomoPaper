@@ -1,5 +1,5 @@
-%\documentclass[extra,mreferee]{gji}
-\documentclass[extra]{gji}
+\documentclass[extra,mreferee]{gji}
+%\documentclass[extra]{gji}
 \usepackage{timet}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -34,7 +34,7 @@ following an earthquake are often attributed to afterslip
 \citep[e.g.][]{NM1974}, and/or poroelastic-relaxation
 \citep[e.g.][]{P1998,J2003}.  If postseismic deformation can be
 entirely described by afterslip, then one could easily constrain the
-spatial distribution of fault slip with a linear least squares
+spatial distribution of slip with a linear least squares
 inversion \citep[e.g.][]{H1987,B2002,F2007}, which could then provide
 insight into the frictional properties of faults
 \citep[e.g.][]{H2006,B2009}.  However, postseismic deformation
@@ -83,7 +83,7 @@ proportional to the fluidity ($1/\eta$) in that parcel, and
 independent of the fluidity elsewhere because the initial stresses are
 only controlled by the elastic properties of the lithosphere.
 Stresses from the earthquake will dissipate over time through
-viscoelastic relaxation and while the stress changes from viscous
+viscoelastic relaxation and while the stress changes from viscoelastic
 relaxation are small compared to the initial elastic stresses, each
 parcel will continue to creep at a rate that is approximately
 proportional to its fluidity.  In this early postseismic period, the
@@ -111,7 +111,7 @@ deformation in a viscoelastic body has the same form as the Laplace
 transform of deformation in a elastic body with the same geometry and
 subjected to the same boundary conditions. The solution for
 displacements following an earthquake in a viscoelastic lithosphere
-can then be easily found provided that the corresponding elastic
+can then be readily found provided that the corresponding elastic
 solution is known \citep[e.g.][]{NM1974,SP1978,HH2005}.  One only
 needs to replace the shear modulus in the Laplace transform of the
 elastic solution with the effective viscoelastic shear modulus and
@@ -186,16 +186,21 @@ described in Appendix A, we find
 \end{align}
 The first term in eq. (\ref{TwoLayerViscous}) is the elastic response
 to slip on the fault.  The remaining terms describe the surface
-displacement due to viscoelastic relaxation.  The first of these
-remaining terms is the initial viscoelastic response and, as
-suggested, it is a linear expression with respect to the fluidity in
-each of the two layers.
+displacement due to viscoelastic relaxation.  We refer to the first of
+these remaining terms as the initial viscoelastic response, which
+describes surface deformation resulting from viscoelastic creep while
+the stress regime created by elastic dislocations is unaltered by
+viscoelastic relaxation. As suggested, the intial viscoelastic
+response is a linear expression with respect to the fluidity in each
+of the two layers.
 
 If the time since the rupture is sufficiently small compared to the
 relaxation times of each layer, $\tau_i=\eta_i/\mu$, (i.e. the third
-and following terms in eq. (\ref{TwoLayerViscous}) are small), then we
-can truncate the series and approximate early surface deformation
-using only the elastic response and the initial viscoelastic response,
+and following terms in eq. (\ref{TwoLayerViscous}) are small) and the
+timescale of slip described by $b(t)$ is also short compared to the
+relaxation times in the halfspace, then we can truncate the series and
+approximate early surface deformation using only the elastic response
+and the initial viscoelastic response,
 \begin{equation}\label{TwoLayerViscousApprox}
  u_v(x,t) \approx b(t)\frac{1}{2}W(0) + 
           \int_0^t b(\theta)\left(\frac{\mu}{2\eta_2}W(1) - 
@@ -203,24 +208,39 @@ using only the elastic response and the initial viscoelastic response,
 \end{equation} 
 An approximation similar to eq. (\ref{TwoLayerViscousApprox}) was
 demonstrated by \citet{S2010} for an elastic layer over a Maxwell
-viscoelastic substrate.  
+viscoelastic substrate. 
+
+\begin{figure}\label{figure1}
+  \centering 
+  \includegraphics[scale=0.8]{FinalFigures/Figure1.pdf}
+  \caption{Surface displacements predicted by
+    eq. (\ref{TwoLayerViscous}) truncated after ten terms (green) and
+    the approximation given by eq. (\ref{TwoLayerViscousApprox})
+    (dotted black).  Times are normalized by the lowest relaxation
+    time in the lithosphere, $\tau_2$, and distances are normalized by
+    the fault locking depth, $D$.  Displacements are shown as a
+    function of distance from the fault at times $t/\tau_2 =
+    0.0,0.5,1.0$ and $1.5$. The inset figure shows displacement time
+    series at locations $x/D = 1.0, 2.0, 4.0$ and $8.0$}
+  \label{Figure 1}
+\end{figure} 
 
 Figure 1 shows the series solution from eq. (\ref{TwoLayerViscous})
-truncated at a sufficiently large $N$ along with the approximation
+truncated after sufficiently many terms along with the approximation
 given by eq. (\ref{TwoLayerViscousApprox}). In this comparison, we use
 $H=15$ km, $D=10$ km and a shear modulus of 32.0 GPa throughout the
 lithosphere.  The upper layer is given a viscosity of $10^{20}$ Pa s
 ($\tau\approx 100$ years) and the substrate is given a viscosity of
 $10^{19}$ Pa s ($\tau\approx 10$ years).  We let $b(t)$ describe a unit
 of instantaneous slip at $t=0.0$.  In the series solution, the rate of
-surface deformation decays over time as stresses in the halfspace
+surface deformation decreases over time as stresses in the halfspace
 decay through viscoelatic relaxation.  Because $b(t)$ is a constant
-after $t=0$, the viscoelastic response in
+after $t=0$, the initial viscoelastic response in
 eq. (\ref{TwoLayerViscousApprox}) describes a constant rate of
 surface deformation and so eq. (\ref{TwoLayerViscousApprox}) is a good
 approximation for as long as the rate of deformation predicted by
 (\ref{TwoLayerViscous}) is also approximately constant. We find the
-that the approximation is a good representation to the series solution
+that the approximation is indistinguishable from the series solution
 for at least as long as half the lowest of the two relaxation times,
 regardless of our choice of model parameters.  The approximation
 breaks down faster than what is show in Figure 1 when the upper layer
@@ -230,7 +250,7 @@ fault).  We also note that the approximation has more longevity for
 locations further away from the fault, where it starts to break down
 at about the minimum relaxation time in the lithosphere.
 
-\subsubsection{Three layered model}
+\subsubsection{Three layered and continuous depth dependent model}
 We follow the same procedure from above to find the surface
 deformation resulting from slip on a strike-slip fault in a three
 layered viscoelastic half-space.  Starting from the layered elastic
@@ -238,7 +258,7 @@ solution from \citet{CJ1972}, we evalutate the solution for the
 viscoelastic problem in our supplementary IPython notebook.  We find
 the initial viscoelastic response to a unit of slip to be
 \begin{equation}\label{ThreeLayerViscousResponse}
-\frac{\partial}{\partial t}u_v(x,t) = \frac{\mu}{2\eta_3}W(1,1)
+\frac{\partial}{\partial t}u(x,t)\big|_{t=0} = \frac{\mu}{2\eta_3}W(1,1)
                                       +\frac{\mu}{2\eta_2}(W(0,1) - W(1,1))
                                       -\frac{\mu}{2\eta_1}W(0,1),
 \end{equation}
@@ -252,7 +272,7 @@ with respect to the fluidity in each of the three layers.  We can
 approximate early postseismic deformation resulting from slip
 described by $b(t)$ as
 \begin{equation}\label{ThreeLayerViscousApprox}
-u_v(x,t) \approx b(t)\frac{1}{2} W(0,0) + 
+u(x,t) \approx b(t)\frac{1}{2} W(0,0) + 
          \int_0^tb(\theta)\left(\frac{\mu}{2\eta_3}W(1,1)
                                +\frac{\mu}{2\eta_2}(W(0,1) - W(1,1))
                                -\frac{\mu}{2\eta_1}W(0,1)\right)d\theta,
@@ -263,21 +283,9 @@ thicknesses of the top and middle layer, respectively.  We can see
 that eq. (\ref{ThreeLayerViscousApprox}) recovers eq.
 (\ref{TwoLayerViscousApprox}) when $\eta_3 = \eta_2$.
 
-%It is worth noting that the initial viscoelastic response for the top
-%layer, is equal and opposite in sign to the initial viscoelastic
-%response from the underlying layers. In the context of an inverse
-%problem, this means that it is impossible to use
-%eq. (\ref{TwoLayerViscousApprox}) or eq. (\ref{ThreeLayerApprox}) to
-%estimate the absolute viscosity of the each layers, rather it would
-%only possible to estimate their relative viscosities. This is not a
-%difficult obstacle to overcome because in application we can typically
-%assume that the upper layer has a sufficiently long Maxwell relaxation
-%time such that it is effectively elastic over the postseismic period.
-
-\subsubsection{Continuous depth dependent model}
 At this point we posit that a similar approximation can be made for an
 arbitrarily layered lithosphere. In Appendix B we use
-eq. (\ref{TwoLayerViscousApprox}) to find an initial viscoelastic
+eq. (\ref{ThreeLayerViscousResponse}) to find an initial viscoelastic
 response kernel.  We then integrate that kernel over the depth of the
 lithosphere to find the initial viscoelastic response for an arbitrary
 depth dependent viscosity structure.  If the lithsophere is elastic
@@ -304,10 +312,9 @@ the depth sensitivity of postseismic deformation.
 
 \subsection{arbitrarily discretized earthquake models}
 Motivated by our above results, we make the assertion that the initial
-rate of surface deformation resulting from an instantaneous
-dislocation in a three-dimensional Maxwell viscoelastic
-medium, which has been arbitrarily discretized into $N$ regions, will
-have the form
+viscoelastic response to an instantaneous dislocation in a
+three-dimensional Maxwell viscoelastic medium, which has been
+arbitrarily discretized into $N$ regions, will have the form
 \begin{equation}\label{PostseismicInitialVelocity}
   \frac{\partial}{\partial t}\vec{u}(\vec{x},t)\big|_{t=0} = \sum_j^N\frac{1}{\eta_j}G_j(\vec{x}).
 \end{equation}
@@ -317,12 +324,11 @@ three-dimensional problems.  We use $G_j(\vec{x})$ to represent the
 initial rate of surface deformation at position $\vec{x}$ resulting
 from viscoelastic creep in region $j$ with unit fluidity, where
 fluidity is zero (i.e. elastic) in all other regions.  In this sense,
-$G_j(x)$ can be thought of as a Green's function for the initial rate
-of surface deformation resulting for viscoelastic deformation, and
-thus we refer to $G_j(x)$ as the initial viscoelastic Green's
-function.  We verify eq. (\ref{PostseismicInitialVelocity})
-numerically in section 5.5 and save a theoretical justification for a
-later paper.
+$G_j(x)$ can be thought of as a Green's function for the initial
+viscoelastic response, and thus we refer to $G_j(x)$ as the initial
+viscoelastic Green's function.  We verify
+eq. (\ref{PostseismicInitialVelocity}) numerically in section 4.3.1 and
+save a theoretical justification for a later paper.
 
 Using eq. (\ref{PostseismicInitialVelocity}), we can approximation
 early surface deformation in a form that is consistent with
@@ -347,19 +353,19 @@ approximated as
 \sum_i^M\sum_j^N\int_0^t\frac{b_i(\theta)}{\eta_j}G_{ij}(\vec{x}) d\theta.
 \end{equation}
 The initial viscoelastic Green's function is dependent upon both the
-region it represents as well as the dislocation source inducing
-the viscoelastic creep in that region, hence the two indices.  It is
-worth restating that the approximation given above does not account
-for the viscoelastic coupling between the regions, since each region's
-contribution to surface deformation is independent of the viscosity
-elsewhere in eq.(\ref{Postseismic_Approximation}).  This approximation
-is therefore appropriate for as long as the regions do not
-significantly transfer stresses between eachother through viscoelastic
-deformation.  Alternatively, since our initial viscoelastic Green's
-functions do not have time dependence, one could view
-eq. (\ref{Postseismic_Approximation}) as being appropriate up until
-surface velocities resulting from viscous relaxation have decayed
-appreciably.
+region it represents as well as the dislocation source inducing the
+viscoelastic creep in that region, hence the two indices.  It is worth
+restating that the approximation given above does not account for the
+viscoelastic coupling between the regions, since in
+eq. (\ref{Postseismic_Approximation}) each region's contribution to
+surface deformation is independent of the viscosity elsewhere.  This
+approximation is therefore appropriate for as long as the regions do
+not significantly transfer stresses between eachother through
+viscoelastic deformation.  Alternatively, since our initial
+viscoelastic Green's functions do not have time dependence, one could
+view eq. (\ref{Postseismic_Approximation}) as being appropriate up
+until surface velocities resulting from viscoelastic creep have
+decayed appreciably.
 
 \section{Inversion method}
 The approximation of postseismic deformation given by eq.
@@ -372,12 +378,13 @@ terms such that
 \begin{equation}
   b_i(t) = \sum_k^P \alpha_{ik}A_k(t),
 \end{equation}
-where $A_k(t)$ consists of either step functions describing coseismic
-slip on a fault patch, or ramp functions, which have a constant, nonzero slope
-over some time interval and are intended to represent afterslip.
-The coefficient $\alpha_{ik}$ then represents either the amount of coseismic slip or
-the cumulative slip over a time interval.  The approximation given by
-eq. (\ref{Postseismic_Approximation}) now becomes
+where $A_k(t)$ consists of either unit step functions describing
+coseismic slip on a fault patch, or ramp functions, which increase
+from 0 to 1 over some time interval, that are intended to represent
+afterslip.  The coefficient $\alpha_{ik}$ then represents either the
+amount of coseismic slip or the cumulative slip over a time interval.
+The approximation given by eq. (\ref{Postseismic_Approximation}) now
+becomes
 \begin{equation}\label{Postseismic_Approximation2}
   \vec{u}(\vec{x},t) \approx
   \sum_i^M\sum_k^P\alpha_{ik}F_i(\vec{x})A_k(t) +
@@ -435,24 +442,15 @@ of pure strike-slip, normal, or thrust are permisible.
 Because this inverse problem inevitably has nonunique solutions for
 $\mitbf{m}$, we put additional constraints on the inferred slip and
 inferred viscosity with the matrices $\mitbf{L_s}$ and $\mitbf{L_v}$,
-respectively.  In our following synthetic tests, we constrain the
+respectively.  In our following synthetic test, we constrain the
 solution by minimizing the Laplacian of the spatial distribution of
 fault slip and lithospheric viscosity by letting
 $\mitbf{L_s}$ and $\mitbf{L_v}$ be umbrella operators \citep{D1999}.
-%such that they can be stacked on top of eachother into the matrix $L_{ij}$,
-%which satisfies
-%\begin{equation}
-%  \sum_j^{Q}L_{ij}m_j = \frac{1}{|\mathcal{N}(i)|}\sum_{k\in \mathcal{N}(i)} m_k - m_i.
-%\end{equation}
-%In the above equation $\mathcal{N}(i)$ denotes the set of indices for
-%model parameters describing slip (viscosity) which is adjacent to the
-%slip (viscosity) described by $m_i$ and $|\mathcal{N}(i)|$ is the
-%length of that set.
 The parameters $\lambda_v$ and $\lambda_s$ in eq. (23) control how
 much we enforce the smoothness constraint.  In our synthetic test, we
 choose these parameters using L-curves, which describe the trade off
 between the model smoothness and data misfit (Figure 2).  We first set
-$\lambda_v=0$ and then use an L-curve to pick $\lambda_s=0$.  We then
+$\lambda_v=0$ and then use an L-curve to pick $\lambda_s$.  We then
 fix $\lambda_s$ at our chosen value and use another L-curve to pick
 $\lambda_v$.  We have attempted to choose our model parameters through
 cross-validation but we found that the optimal pair of penalty
@@ -466,49 +464,36 @@ solving
 \begin{equation}\label{Gauss-Newton}
 \mitbf{J}(\mitbf{m}^{k})\mitbf{m}^{k+1} = -\mitbf{f}(\mitbf{m}^k) + \mitbf{J}(\mitbf{m}^{k})\mitbf{m}^{k}
 \end{equation}
-for $\mitbf{m}^{k+1}$.  $\mitbf{J}(\mitbf{m}^k)$ is the Jacobian of
-$\mitbf{f(m)}$ with respect to $\mitbf{m}$ evaluated at
+for $\mitbf{m}^{k+1}$, where $\mitbf{J}(\mitbf{m}^k)$ is the Jacobian
+of $\mitbf{f(m)}$ with respect to $\mitbf{m}$ evaluated at
 $\mitbf{m^k}$. We impose the nonnegativity constraint on $\mitbf{m}$
 by solving eq. (\ref{Gauss-Newton}) with a nonnegative least squares
-algoritm \citep{LH1974}. We find that it is occasionally necessary to
-constrain the step size for each iteration of eq. (\ref{Gauss-Newton})
-in order to ensure convergence.  We do so in a manner akin to the
-Levenberg-Marquardt algorithm \citep[e.g.][]{A2013}.  We instead solve
-\begin{equation}\label{Levenberg-Marquardt}
-  \mitbf{J^*}(\mitbf{m}^k)\mitbf{m}^{k+1} = -\mitbf{f^*}(\mitbf{m}^k) + \mitbf{J^*}(\mitbf{m}^k)\mitbf{m}^k
-\end{equation}
-for $m^{k+1}$, where
-\begin{equation}
-  \mitbf{J^*}(\mitbf{m}) = 
-      \begin{vmatrix}
-      \mitbf{J}(\mitbf{m})\\
-      \kappa\mitbf{I}
-      \end{vmatrix},
-\end{equation}
-and
-\begin{equation}
-  \mitbf{f^*}(\mitbf{m}) = 
-      \begin{vmatrix}
-      \mitbf{f}(\mitbf{m})\\
-      \mitbf{0}
-      \end{vmatrix},
-\end{equation}
-and $\kappa$ controls the step size for each iteration and varies
-depending on whether the algorithm is converging.  
+algoritm \citep{LH1974}. In a nonlinear least squares algorithm,
+computing the Jacobian can often be the largest computational burden
+when an analytic solution for the Jacobian is not available. By
+linearizing the viscoelastic response in early postseismic deformation
+with respect to $\eta_j$, we have made our forward problem,
+eq. (\ref{Postseismic_Approximation2}), sufficiently simple that
+evaluating its Jacobian for a given $\mathbf{m}$ only requires a few
+computationally inexpensive matrix operations. Consequently, our
+nonlinear least squares algorithm converges to a solution for
+$\mitbf{m}$ in a matter of seconds on a desktop computer.  The main
+computational burden is in computing $F_i(x)$ and $G_{ij}(x)$ which is
+done with finite element software and only needs to be done once for a
+given fault and lithosphere geometry.
 
-In a nonlinear least squares algorithm, computing the Jacobian
-typically is the largest computational burden; however, in this case
-evaluating the Jacobian of eq. (\ref{Postseismic_Approximation2})
-requires only a few computationally inexpensive matrix operations.
-Consequently, our nonlinear least squares algorithm converges to a
-solution for $\mitbf{m}$ in a matter of seconds on a desktop computer.
-The main computational burden is in computing $F_i(x)$ and $G_{ij}(x)$
-which is done with finite element software and only needs to be done
-once for a given fault and lithosphere geometry. Throughout this
-paper, our initial guess for the model parameters is that there is no
-slip on any fault patch, and the lithosphere is entirely elastic
-($1/\eta = 0$).  In our experience, the choice of initial guess has an
-insignificant effect on the best fit solution.
+\begin{figure}\label{figure2}
+  \centering
+  \includegraphics[scale=0.43]{FinalFigures/Figure6.pdf}
+  \caption{L-curves used to select the penalty parameters. Panel A
+    shows the trade off between slip smoothness and data misfit while
+    varying $\lambda_s$ and keeping $\lambda_v$ fixed at zero.  Panel
+    B shows trade off between smoothness of inferred viscosity and
+    misfit while varying $\lambda_v$ and keeping $\lambda_s$ fixed at
+    the value chosen from Panal A.  Stars indicate our chosen penalty
+    parameters.}
+  \label{Figure 2}
+\end{figure}
 
 \section{Synthetic test}
 \subsection{Synthetic postseismic deformation}
@@ -524,6 +509,18 @@ synthetic test also serves to demonstrate that
 eqs. (\ref{PostseismicInitialVelocity}) and
 (\ref{Postseismic_Approximation}) are indeed valid for three
 dimensional earthquake models.
+
+\begin{figure}\label{figure3}
+  \centering
+  \includegraphics[scale=0.6]{FinalFigures/Figure2.pdf}
+  \caption{Slip distribution imposed in the synthetic models and slip
+    recovered from the inversion. Colors indicate magnitude of slip
+    and arrows indicate direction of slip (arrows pointing right
+    indicate left-lateral and up is thrust).  The panals showing
+    afterslip display cumulative slip over the specified time
+    interval.}
+  \label{Figure 3}
+\end{figure}
 
 Our synthetic model consists of a 50 km long by 20 km wide strike-slip
 fault, striking to the north and dipping $60^{\circ}$ to the east (figure
@@ -555,23 +552,33 @@ exponential noise model that has a characteristic timescale of 0.25
 years, which is intended to simulate seasonal processes that are
 typically present in GPS time series.
 
+\begin{figure}\label{figure4}
+  \centering
+  \includegraphics[scale=0.7]{FinalFigures/Figure3.pdf}
+  \caption{Synthetic and recovered lithospheric viscosities (right)
+    and associated fluidities (left).  Semi-transparent lines are recovered
+    models found through bootstrapping and indicate the degree of
+    uncertainty on the inferred viscosity structure.}
+  \label{Figure 4}
+\end{figure}
+
 \subsection{Green's functions}
 
 We invert the synthetic surface deformation for fault slip on a 4 km
-by 4 km discretization of the fault segment and we estimate a constant
+by 4 km discretization of the fault segment.  We estimate a constant
 viscosity in 10 km thick horizontal layers from the surface down to 70
-km depth. We compute the elastic Green's functions, $F_i(\vec{x})$,
-and initial viscoelastic Green's functions, $G_{ij}(\vec{x})$,
-numerically using Pylith.  The elastic Green's functions are the
-initial surface displacements resulting from 1 m of imposed slip on
-fault patch $i$.  For each fault patch, we use basis slip directions
-with rake $45^\circ$ updip and $45^\circ$ downdip of pure
-right-lateral slip.  These slip basis directions restrict all inferred
-slip to be within $45^\circ$ of right-lateral. We find the initial
-viscoelastic Green's functions, $G_{ij}(\vec{x})$, by computing the
-initial rate of surface deformation due to 1 m of slip on fault
-patch $i$ in a model that is elastic everywhere except in region $j$,
-which is assigned a viscosity of $10^{18}$ Pa s.
+km depth and for a lower substrate. We compute the elastic Green's
+functions, $F_i(\vec{x})$, and initial viscoelastic Green's functions,
+$G_{ij}(\vec{x})$, numerically using Pylith.  The elastic Green's
+functions are the initial surface displacements resulting from 1 m of
+imposed slip on fault patch $i$.  For each fault patch, we use basis
+slip directions with rake $45^\circ$ updip and $45^\circ$ downdip of
+pure right-lateral slip.  These slip basis directions restrict all
+inferred slip to be within $45^\circ$ of right-lateral. We find the
+initial viscoelastic Green's functions, $G_{ij}(\vec{x})$, by
+computing the initial rate of surface deformation due to 1 m of slip
+on fault patch $i$ in a model that is elastic everywhere except in
+region $j$, which is assigned a viscosity of $10^{18}$ Pa s.
 
 We define the basis slip functions, $A_k(t)$, as a heaviside function
 centered at $t=0$ and three ramp functions which increase from 0 to 1
@@ -584,6 +591,21 @@ model, can be describe with continued fault slip.
 
 \subsection{Recovered model}
 
+\begin{figure}\label{figure5}
+  \centering
+  \includegraphics[scale=0.6]{FinalFigures/Figure4.pdf}
+  \caption{Synthetic surface displacements (green) and best fitting
+    surface displacements (black).  Vertical displacements are used in
+    the inversion but are not shown here.  The top left panel shows
+    coseismic displacements and the remaining panals show the
+    cumulative displacements over the indicated time
+    intervals. Ellipses indicate 1 standard deviation uncertainty in
+    the synthetic data. Red dot indicates the position of the time
+    series shown in Figure 6. The surface projection of the
+    discretized synthetic fault is depicted in red.}
+  \label{Figure 5}
+\end{figure}
+
 Our best fitting model of slip on the fault is shown in Figure 3.  The
 spatial distribution and direction of inferred coseismic slip are a
 good match to the synthetic coseismic slip.  The distribution of
@@ -594,14 +616,15 @@ on the north-most section of the fault.  The distribution of afterslip
 also has been considerably smoothed out by the regularization. Our
 inability to recover the details of the imposed afterslip as well as
 the coseismic slip could be because the data noise is obscuring some
-of the postseismic signal or possibly because the imposed afterslip is
-deeper than the coseismic slip and thus more difficult to accurately
-recover.  Nevertheless, the inferred moment of both coseismic slip and
-afterslip, which is proportional to slip integrated over the fault
-plane, is in good agreement with the moment in the synthetic model.
-Although the spatial distribution of inferred slip may be more
-difficult to recover, the cumulative slip seems to be consistently
-recovered with ease.
+of the postseismic signal (figure 5b and 5c compared to figure 5a) or
+possibly because the imposed afterslip is deeper than the coseismic
+slip and thus more difficult to accurately recover.  Nevertheless, the
+inferred moment of both coseismic slip and afterslip, which is
+proportional to slip integrated over the fault plane, is in good
+agreement with the moment in the synthetic model.  Although the
+spatial distribution of inferred slip may be more difficult to
+recover, the cumulative slip seems to be consistently recovered with
+ease.
 
 The inferred slip over the last time interval, $t=1$ to 10 years, is
 also consistent with the synthetic model.  The moment of slip over
@@ -611,8 +634,8 @@ cummulative afterslip in the synthetic model.  This means that the
 inferred slip is accounting for, at most, a few mm's of displacement
 from $t=1.0$ to $t=10.0$ years.  This is on order of the data
 uncertainty and so the inferred slip is negligably small.  The
-majority of surface deformation during this time interval is therefore
-being properly attributed to viscoelastic relaxation.
+majority of surface deformation during this time interval (figure 5d)
+is therefore being properly attributed to viscoelastic relaxation.
 
 The inferred viscosities in each of the eight layers are shown in
 Figure 4a.  The recovered viscosities correspond well with the
@@ -647,7 +670,7 @@ are those estimated from the synthetic data.  We then compare the
 displacements from the numerically computed forward model with the
 displacements predicted by eq. (\ref{Postseismic_Approximation}).  We
 refer to the numerically computed displacements as
-$\vec{u}_{\mathrm{true}}(\vec{x},t)$ and the displacments predicted by our
+$\vec{u}_{\mathrm{true}}(\vec{x},t)$ and the displacments predicted by the
 approximation as $u(x,t)$ (Figure 6).  We refer to the
 difference between $\vec{u}_{\mathrm{true}}(\vec{x},t)$ and $\vec{u}(\vec{x},t)$
 as the approximation error (Figure 7). At $t=10$ years the
@@ -658,14 +681,37 @@ cm's of deformation resulting from viscoelastic relaxation, indicating
 that eq. (\ref{Postseismic_Approximation}) is indeed a fair
 approximation up to $t=10$ years.  
 
+\begin{figure}\label{figure6}
+  \centering
+  \includegraphics[scale=0.6]{FinalFigures/Figure5.pdf}
+  \caption{Displacement time series for the position shown in Figure 5
+    (green), best fitting surface displacements using the
+    approximation from eq. (\ref{Postseismic_Approximation}) (black)
+    and surface displacements computed with Pylith using the infered
+    slip distribution and viscosity structure. Coseismic displacements
+    at $t=0$ are not shown.}
+  \label{Figure 6}
+\end{figure}
+
 At $t=20$ years the approximation error is about
 one cm in magnitude for near field sites, indicating that the
 approximation has broken down in the near field by this time, while
-the residuals are still on order of a few mm's for the far field
+the error is still on order of a few mm's for the far field
 sites.  The faster divergence for the near field sites is consistent
 with the comparison we made between the approximate and true
 displacements for a two-dimensional, two layered earthquake model in
 section 2.1.1 (Figure 1).
+
+\begin{figure}\label{figure7}
+  \centering
+  \includegraphics[scale=0.6]{FinalFigures/Figure7.pdf}
+  \caption{Difference between $\vec{u}(\vec{x},t)$ and
+    $\vec{u}_{\mathrm{true}}(\vec{x},t)$ at $t=10$ years and $t=20$ years.
+    Circles with 1 mm radius are centered at each station to compare
+    the accuracy of $\vec{u}(x,t)$ to the noise in
+    the synthetic data.}
+  \label{Figure 7}
+\end{figure}
 
 The accuracy of eq. (\ref{Postseismic_Approximation}) is also
 demonstrated in Figure 6, which shows $\vec{u}(\vec{x},t)$ and
@@ -685,18 +731,6 @@ relaxation time in our synthetic lithosphere is also about 10 years
 and so the duration over which eq. (\ref{Postseismic_Approximation})
 is accurate is longer than what we found in our analysis for a
 two-dimensional, two layered earthquake model in section 2.1.1. 
-
-%Figure 7 also shows the root mean square error as
-%a function of time which we define as
-%\begin{equation}
-%  \mathrm{RMSE}(t) = \frac{\left|\left|\mitbf{u}(t) -
-%    \mitbf{u}_{\mathrm{true}}(t)\right|\right|_2}{\sqrt{\mathrm{R}}},
-%\end{equation}
-%where R is the number of elements in $\mitbf{u}(t)$ and
-%$\mitbf{u}_{\mathrm{true}}(t)$.  The root mean square error describes
-%the average amount that the approximate displacements deviate from
-%the true displacements for a given time.  The RMSE increases
-%quadratically from 0 at $t=0$ to a few millimeters at $t=20$. 
 
 \section{Discussion}
 
@@ -793,24 +827,37 @@ effective viscosity in the upper mantle would yield a strong signal
 over this time.  We postulate that the method described in this paper
 would then be able to identify the location of the weak regions in the
 lithosphere with much higher resolution than what could be obtained
-through the typical forward modeling grid search method.  Any excised
+through the typical forward modeling, grid search method.  Any excised
 portion of the timeseries could then be used to further constrain
 estimates of fault slip and lithospheric viscosity by including it in
 a gradient based nonlinear inverse method where the forward problem is
 computed numerically rather that with
 eq. (\ref{Postseismic_Approximation}). In such case, the initial guess
 for the model parameters would be the estimates of slip and viscosity
-obtained from the truncated time series.  
-
-
-%talk about time stepping this algorithm?
-
+obtained using our method with the truncated time series.  
 
 \section{Conclusion}
+We present a method to invert coseismic and postseismic deformation to
+simultaneously estimate a time dependent distribution of fault slip
+and an arbitarily discretized viscosity structure of the lithosphere.
+We take advantage of the fact that early postseismic deformation
+resulting from viscoelastic relaxation can be approximated as a linear
+function with respect to the lithospheric viscosity.  Our method is
+then only applicable for as long as this approximation is appropriate,
+that is, for as long as stresses resulting from coseismic slip and
+afterslip have not significantly decayed due to viscoelastic
+relaxation.  Based on estimates of lithospheric viscosity from other
+studies, we estimate that our method could be used for postseismic
+deformation ranging from months to years after and earthquake.
+Despite this limitation, Our method is much faster than forward
+modeling techniques that are commonly used in studies seeking to
+estimate the rheologic properties of the lithosphere and our method
+allows for unprecedented resolving power of a lithospheric viscosity
+structure.
+
 
 \appendix
 \section{Inverse Laplace transorm through series expansion}
-
 let $f(t)$ be analytic at $t=0$ and let there
   be a real valued $M$, and $C$ such that
 \begin{equation}\label{constraints}
@@ -1143,92 +1190,5 @@ u(x,t) \approx \frac{b(t)}{\pi}\tan^{-1}(\frac{D}{x}) +
   volcano deformation, pp 185-186, Princeton University Press.
 
 \end{thebibliography}
-
-\begin{figure}[h!]\label{figure1}
-  \centering
-  \includegraphics[width=0.8\textwidth]{FinalFigures/Figure1.pdf}
-  \caption{Surface displacements predicted by
-    eq. (\ref{TwoLayerViscous}) truncated after ten terms (green) and
-    the approximation given by eq. (\ref{TwoLayerViscousApprox})
-    (dotted black).  Times are normalized by the lowest relaxation
-    time in the lithosphere, $\tau_2$, and distances are normalized by
-    the fault locking depth, $D$.  Displacements are shown as a
-    function of distance from the fault at times $t/\tau_2 =
-    0.0,0.5,1.0$ and $1.5$. The inset figure shows displacement time
-    series at locations $x/D = 1.0, 2.0, 4.0$ and $8.0$}
-  \label{Figure 1}
-\end{figure}
-
-\begin{figure}[h!]\label{figure2}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure6.pdf}
-  \caption{L-curves used to select the penalty parameters. Panel A
-    shows the trade off between slip smoothness and data misfit while
-    varying $\lambda_s$ and keeping $\lambda_v$ fixed at zero.  Panel
-    B shows trade off between smoothness of inferred viscosity and
-    misfit while varying $\lambda_v$ and keeping $\lambda_s$ fixed at
-    the value chosen from Panal A.  Stars indicate our chosen penalty
-    parameters.}
-  \label{Figure 2}
-\end{figure}
-
-\begin{figure}[h!]\label{figure3}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure2.pdf}
-  \caption{Slip distribution imposed in the synthetic models and slip
-    recovered from the inversion. Colors indicate magnitude of slip
-    and arrows indicate direction of slip (arrows pointing right
-    indicate left-lateral and up is thrust).  The panals showing
-    afterslip display cumulative slip over the specified time
-    interval.}
-  \label{Figure 3}
-\end{figure}
-
-\begin{figure}[h!]\label{figure4}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure3.pdf}
-  \caption{Synthetic and recovered lithospheric viscosities (right)
-    and associated fluidities (left).  Semi-transparent lines are recovered
-    models found through bootstrapping and indicate the degree of
-    uncertainty on the inferred viscosity structure.}
-  \label{Figure 4}
-\end{figure}
-
-\begin{figure}[h!]\label{figure5}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure4.pdf}
-  \caption{Synthetic surface displacements (green) and best fitting
-    surface displacements (black).  Vertical displacements are used in
-    the inversion but are not shown here.  The top left panel shows
-    coseismic displacements and the remaining panals show the
-    cumulative displacements over the indicated time intervals. Red dot indicates
-    the position of the time series shown in Figure 6. The surface
-    projection of the discretized synthetic fault is depicted in red.}
-  \label{Figure 5}
-\end{figure}
-
-\begin{figure}[h!]\label{figure6}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure5.pdf}
-  \caption{Displacement time series for the position shown in Figure 5
-    (green), best fitting surface displacements using the
-    approximation from eq. (\ref{Postseismic_Approximation}) (black)
-    and surface displacements computed with Pylith using the infered
-    slip distribution and viscosity structure. Coseismic displacements
-    at $t=0$ are not shown.}
-  \label{Figure 6}
-\end{figure}
-
-\begin{figure}[h!]\label{figure7}
-  \centering
-  \includegraphics[width=0.9\textwidth]{FinalFigures/Figure7.pdf}
-  \caption{Difference between $\vec{u}(\vec{x},t)$ and
-    $\vec{u}_{\mathrm{true}}(\vec{x},t)$ at $t=10$ years and $t=20$ years.
-    Circles with 1 mm radius are centered at each station to compare
-    the accuracy of $\vec{u}(x,t)$ to the noise in
-    the synthetic data.}
-  \label{Figure 7}
-\end{figure}
-
 
 \end{document}
