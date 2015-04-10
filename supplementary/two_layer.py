@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
 script used to generate figure 1, which compares the postseismic approximation
-given by 11 to the true solution
+given by 11 to the series solution in 10
 '''
 from __future__ import division
 import numpy as np
