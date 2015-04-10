@@ -1,5 +1,5 @@
-\documentclass[extra,mreferee]{gji}
-%\documentclass[extra]{gji}
+%\documentclass[extra,mreferee]{gji}
+\documentclass[extra]{gji}
 \usepackage{timet}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -22,6 +22,30 @@
 \maketitle
 
 \begin{summary}
+Postseismic deformation is commonly attributed to viscoelastic
+relaxation and/or afterslip, although discerning between the two
+driving mechanisms can be difficult.  A major complication in modeling
+postseismic deformation is that forward models can be computationally
+expensive, making it difficult to adequately search model space to
+find the optimal fault slip distribution and lithospheric viscosity
+structure that can explain observable postseismic deformation.  We
+develope an inverse method which uses coseismic and early postseismic
+deformation to rapidly and simultaneously estimate a fault slip
+history and an arbitrarily discretized viscosity structure of the
+lithosphere. Our method is based on an approximation which expresses
+early postseismic deformation as an easily evaluated function where
+the deformation resulting viscoelastic relaxation is linear with
+respect to lithospheric viscosiy.  We first explore this approxmation
+using two-dimensional earthquake models and then demonstrate our
+inverse method using a three-dimensional synthetic test.  One
+limitation of our method is that it is only applicable to an early
+portion of the postseismic period; however, the success of our
+synthetic test suggests that our method is capable of 1) distinguishing the
+mechanisms driving early postseismic deformation and 2) recovering a
+viscosity structure of the lithosphere with far greater resolution
+than what can be obtained with conventional grid search techniques.
+
+
 \end{summary}
 
 \begin{keywords}
@@ -34,25 +58,29 @@ following an earthquake are often attributed to afterslip
 \citep[e.g.][]{NM1974}, and/or poroelastic-relaxation
 \citep[e.g.][]{P1998,J2003}.  If postseismic deformation can be
 entirely described by afterslip, then one could easily constrain the
-spatial distribution of slip with a linear least squares
-inversion \citep[e.g.][]{H1987,B2002,F2007}, which could then provide
-insight into the frictional properties of faults
-\citep[e.g.][]{H2006,B2009}.  However, postseismic deformation
-following large ($M_w\geq$7) earthquakes is often attributed to
-viscoelastic relaxation in the lithosphere
-\citep[e.g.][]{HH2003,P2003,P2005} or a combination of both afterslip
-and viscoelastic relaxation \citep[e.g.][]{F2006,H2009,J2009,R2015}.
-In such cases, postseismic deformation can be used to constrain the
-viscous properties of the lithosphere, although this is a more
-difficult task than constraining a slip distribution.  Not only are
-there potentially competing deformation mechanism which must be
-discerned, finding the viscosity distribution of the lithopshere from
-postseimsic deformation is a computationally expensive nonlinear
-inverse problem.  Typically, the estimation of viscosities is
-approached with a forward modeling, grid search method.  These forward
-modeling techniques require the number of unknown parameters being
-estimated to be small, meaning that significant and potentially
-inappropriate modeling assumptions must be made \citep{RG2008,H2013}.
+spatial distribution of slip with a linear least squares inversion
+\citep[e.g.][]{H1987,B2002,F2007}, which could then provide insight
+into the frictional properties of faults \citep[e.g.][]{H2006,B2009}.
+However, postseismic deformation following large ($M_w\geq$7)
+earthquakes is often attributed to viscoelastic relaxation in the
+lithosphere \citep[e.g.][]{HH2003,P2003,P2005} or a combination of
+both afterslip and viscoelastic relaxation
+\citep[e.g.][]{F2006,H2009,J2009,R2015}.  In such cases, postseismic
+deformation can be used to constrain the viscous properties of the
+lithosphere, although this is a more difficult task than constraining
+a slip distribution.  Not only are there potentially competing
+deformation mechanism which must be discerned, finding the viscosity
+distribution of the lithopshere from postseimsic deformation is a
+computationally expensive nonlinear inverse problem.  Typically, the
+estimation of viscosities is approached with a forward modeling, grid
+search method.  These forward modeling techniques require the number
+of unknown parameters being estimated to be small, meaning that
+significant and potentially inappropriate modeling assumptions must be
+made.  Namely, studies seeking to estimate the viscosity structure of
+the lithosphere often assume for computational tractability that the
+lithosphere is composed of two or three homogeneously viscoelastic
+layers, which may not be appropriate for describing a more realistic
+depth dependent viscosity structure \citep{RG2008,H2013}.
 
 In this paper we propose a relatively fast method to kinematically
 invert coseismic and postseismic deformation to simultaneously
@@ -310,7 +338,7 @@ wash out the second order effect of viscosity. However,
 eq. (\ref{ContinuousViscousApprox}) is useful for making estimates of
 the depth sensitivity of postseismic deformation.
 
-\subsection{arbitrarily discretized earthquake models}
+\subsection{Three-dimensional earthquake models}
 Motivated by our above results, we make the assertion that the initial
 viscoelastic response to an instantaneous dislocation in a
 three-dimensional Maxwell viscoelastic medium, which has been
@@ -650,15 +678,6 @@ surface displacements.  When looking at inferred values of fluidity
 (Figure 4b), we see that the uncertainties are lowest at the surface
 and increase with depth, as is perhaps more intuitive.
 
-%We note that our inferred viscosities are strongly influenced by the
-%regularization.  Indeed, many far less smooth viscosity structures
-%would be able to fit the synthetic data just as well as what is shown
-%in Figure 3.  Additionally, based on Figure 6, larger regularization
-%parameters could have been used at only a slight cost to the models
-%predictive power.  That is to say, an even smoother viscosity
-%structure than that shown would also be able to adequately describe the
-%synthetic data.
-
 \subsubsection{Validation}
 The fact that our recovered fault slip and lithospheric viscosity are
 in good agreement with the synthetic model suggests that the
@@ -754,7 +773,6 @@ describing observed postseismic deformation or if inferred relaxation
 times are significantly less than the length of the time series, then
 the postseismic time series used in the inversion should be shortened.
 
-%Talk about how inferred viscosity would change if the time series length is too long
 Our synthetic data is characterized by transient and rapid postseismic
 deformation in the first year after the earthquake followed by steady
 deformation in the later years.  Surface deformation following large
@@ -855,7 +873,6 @@ estimate the rheologic properties of the lithosphere and our method
 allows for unprecedented resolving power of a lithospheric viscosity
 structure.
 
-
 \appendix
 \section{Inverse Laplace transorm through series expansion}
 let $f(t)$ be analytic at $t=0$ and let there
@@ -900,7 +917,7 @@ eq. (\ref{TaylorSeries}) with eqs. (\ref{NthDeriv}) and
 (\ref{NthDerivBase}) so that $f(t)$ is expressed in terms of
 $\hat{f}(s)$.
 
-\section{Postseismic approximation for a two-dimensional earthquake model with an arbitrary depth dependent viscosity}
+\section{Postseismic approximation for a two-dimensional earthquake model with a depth dependent viscosity}
 We seek to find an approximation for early postseismic deformation in
 a two-dimensional, strike-slip earthquake model with an arbitrary
 depth-dependent viscosity below the fault locking depth, $D$.  We
